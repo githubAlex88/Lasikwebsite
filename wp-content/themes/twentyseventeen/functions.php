@@ -610,22 +610,3 @@ require get_parent_theme_file_path( '/inc/customizer.php' );
  * SVG icons functions and filters.
  */
 require get_parent_theme_file_path( '/inc/icon-functions.php' );
-
-
-add_action( 'save_post', 'my_save_post_function', 10, 3 );
-
-function my_save_post_function( $post_ID ) {
-	$link = get_permalink($post_ID);
-	$parse = parse_url($link);
-	$post_url = $parse['scheme'].'://'.$parse['host'].'/purge'.$parse['path'];
-
-	$ch = curl_init();
-	curl_setopt($ch, CURLOPT_URL, $post_url);
-	curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-	curl_setopt($ch, CURLOPT_REFERER, $link );
-
-	$response = curl_exec($ch);
-  	// $body = $response['body'];
-  	// echo $response;
-  	// die('<<<');
-}
