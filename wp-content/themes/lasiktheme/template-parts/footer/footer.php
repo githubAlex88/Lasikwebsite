@@ -23,13 +23,15 @@
       <?php endif; ?>
       <div class="footer__item show-on-small hide-on-med-only show-on-large">
         <?php
-        $current_menu_item = wp_get_nav_menu_items( 2 , 
+        $menu_id = get_nav_menu_locations()['header-menu'];
+        if( !$menu_id ) return false;
+        $current_menu_item = wp_get_nav_menu_items( $menu_id , 
           array(
             'meta_key'    =>  '_menu_item_object_id',
             'meta_value'  =>  $post->ID
           ) 
         );
-        $menu_items = wp_get_nav_menu_items( 2 );
+        $menu_items = wp_get_nav_menu_items( $menu_id );
 
         $pages = array();
         foreach ($menu_items as $page) {
