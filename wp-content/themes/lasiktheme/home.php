@@ -223,7 +223,7 @@ get_header(); ?>
                             <a href="<?php echo get_post_permalink($story_id);?>" class="btn-simple btn-simple--icon btn-simple--orange btn-simple--big">
                                 <i class="far fa-angle-right btn-simple__icon"></i>
                                 <span class="btn-simple__text">
-                                    Watch Stephanies’s LASIK Story
+                                    <?php echo $meta_data['story_text'][0]; ?>
                                 </span>
                             </a>
                         </div>
@@ -290,6 +290,9 @@ get_header(); ?>
                                             <div class="hidden" data-target="cost-item__description">
                                                 <?php the_sub_field( 'section_description' ); ?>
                                             </div>
+                                            <div class="hidden" data-target="section-title">
+                                                <?php the_sub_field( 'cost_title' ); ?>
+                                            </div>
                                         </div>
                                     <?php endwhile; endif; ?>
                                     
@@ -311,7 +314,7 @@ get_header(); ?>
                           <a href="#" class="btn-simple btn-simple--icon btn-simple--dark-blue btn-simple--big">
                             <i class="far fa-usd-circle btn-simple__icon"></i>
                             <span class="btn-simple__text btn-simple__text--small">
-                              Learn More About <span class="section-title">Financing LASIK</span>
+                              Learn More About <span class="section-title"><?php echo $title; ?></span>
                             </span>
                           </a>
                         </div>

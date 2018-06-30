@@ -170,6 +170,21 @@ class storyfieldMetabox {
       'type' => 'textarea',
     ),
     array(
+      'label' => 'Patient Story Name',
+      'id' => 'fname',
+      'type' => 'text',
+    ),
+    array(
+      'label' => 'Patient Last Name',
+      'id' => 'lname',
+      'type' => 'text',
+    ),
+    array(
+      'label' => 'Patient Story Text',
+      'id' => 'story_text',
+      'type' => 'text',
+    ),
+    array(
       'label' => 'Image',
       'id' => 'image',
       'type' => 'media',
