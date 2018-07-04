@@ -23,27 +23,39 @@ if (isset($_SERVER['HTTP_X_FORWARDED_FOR'])) {
   $_SERVER['REMOTE_ADDR'] = $ips[0];
 }
 
-define('WP_HOME','http://192.168.99.100');
-define('WP_SITEURL','http://192.168.99.100');
+
 
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
-define('DB_NAME', 'wordpress');
+$env = getenv('ENV_VAR');
+if( $env == 'staging' ) {
+	define('DB_NAME', 'pizlbv23uy6u9zjb');
 
-/** MySQL database username */
-define('DB_USER', 'root');
+	/** MySQL database username */
+	define('DB_USER', 'eay0mnsf0eji1lz0');
 
-/** MySQL database password */
-define('DB_PASSWORD', 'root');
+	/** MySQL database password */
+	define('DB_PASSWORD', 'np405wnpe5hjpnhg');
 
-/** MySQL hostname */
-define('DB_HOST', 'mysql');
+	/** MySQL hostname */
+	define('DB_HOST', 'thzz882efnak0xod.cbetxkdyhwsb.us-east-1.rds.amazonaws.com');
 
-/** Database Charset to use in creating database tables. */
-define('DB_CHARSET', 'utf8');
+}
+else {
+	define('WP_HOME','http://192.168.99.100');
+	define('WP_SITEURL','http://192.168.99.100');
 
-/** The Database Collate type. Don't change this if in doubt. */
-define('DB_COLLATE', '');
+	define('DB_NAME', 'wordpress');
+	define('DB_USER', 'root');
+	define('DB_PASSWORD', 'root');
+	define('DB_HOST', 'mysql');
+
+}
+	/** Database Charset to use in creating database tables. */
+	define('DB_CHARSET', 'utf8');
+
+	/** The Database Collate type. Don't change this if in doubt. */
+	define('DB_COLLATE', '');
 
 /**#@+
  * Authentication Unique Keys and Salts.
