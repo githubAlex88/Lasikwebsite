@@ -17,9 +17,41 @@
 
 get_header(); ?>
 
-<main class="main" >
-	test
-</main>
+
+<?php
+
+if ( has_post_thumbnail( get_queried_object_id() ) ) :
+	
+	$image = wp_get_attachment_image_src( get_post_thumbnail_id( get_queried_object_id() ), 'full' );
+	?>
+	<section class="wrap-article-top" style="background-image:url(<?php echo $image[0]; ?>)">
+		<div class="container">
+			<h1><?php echo single_post_title(); ?></h1>
+			<a href="#" class="button button-secondary button-big" data-open-submenu="#submenu-resources">
+			What Would You Like to Learn More About?
+			</a>
+		</div>
+	</section>
+	<?php
+endif;
+?>
+<?php 
+	if( have_posts() ) : 
+		?>
+		<section class="wrap-article-list">
+			<section class="article-list container">
+				<?php 
+				while( have_posts() ) :
+					the_post();
+
+					get_template_part( 'template-parts/post/content', get_post_format() );
+				endwhile;
+				?>
+			</section>
+		</section>
+		<?php
+	endif;
+?>
 
 <?php
 get_footer();

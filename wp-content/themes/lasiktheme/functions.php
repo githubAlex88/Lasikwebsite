@@ -34,6 +34,29 @@
     add_theme_support( 'custom-logo' );
     add_theme_support( 'widgets' );
 
+    add_theme_support(
+        'html5', array(
+            'comment-form',
+            'comment-list',
+            'gallery',
+            'caption',
+        )
+    );
+
+    add_theme_support(
+        'post-formats', array(
+            'aside',
+            'image',
+            'video',
+            'quote',
+            'link',
+            'gallery',
+            'audio',
+        )
+    );
+
+    add_theme_support( 'post-thumbnails' );
+
     function register_theme_menus() {
         register_nav_menus(
             array(
@@ -119,6 +142,40 @@
         if ( file_exists( $svg_icons ) ) {
             require_once( $svg_icons );
         }
+    }
+
+    if( ! function_exists( 'fix_no_editor_on_posts_page' ) ) {
+
+        /**
+         * Add the wp-editor back into WordPress after it was removed in 4.2.2.
+         *
+         * @param Object $post
+         * @return void
+         */
+        function fix_no_editor_on_posts_page( $post ) {
+            if( isset( $post ) && $post->ID != get_option('page_for_posts') ) {
+                return;
+            }
+
+            remove_action( 'edit_form_after_title', '_wp_posts_page_notice' );
+            add_post_type_support( 'page', 'editor' );
+        }
+        add_action( 'edit_form_after_title', 'fix_no_editor_on_posts_page', 0 );
+     }
+
+    remove_filter( 'the_excerpt', 'wpautop' );
+    // remove_filter( 'the_content', 'wpautop' );
+
+    add_filter( 'wp_nav_menu_items', 'add_search_to_nav', 10, 2 );
+
+    function add_search_to_nav( $items, $args )
+    {
+        // check if navigation menu is header and add last 2 items 
+        if( is_a($args->walker, 'Header_Nav') ) {
+            $items .= '<li class="menu__item show-on-medium"><a href="#" class="menu__link sidenav-trigger" data-target="mobile-menu"><i class="far fa-bars menu__icon"></i></a></li>';
+            $items .= '<li class="menu__item hide-on-small-only"><a href="#search-modal" class="menu__link modal-trigger"><i class="far fa-search menu__icon"></i></a></li>';
+        }
+        return $items;
     }
 
     // Walker Navigation includes

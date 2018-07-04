@@ -29,7 +29,7 @@ class Sidebar_Nav extends Walker_Nav_Menu {
             // $indent .= "<li class='sidenav__item'><a href='#' class='sidenav__link'>Home</a></li>";
 
 
-            $output .= "<div class='submenu'>";
+            $output .= "<div class='submenu' id='submenu-". $this->data_dropdown ."'>";
             $output .= "<a href='#' class='submenu__back submenu-toggle'>Back</a>";
             $output .= "{$n}{$indent}<ul class='submenu__list'>{$n}";
         }
