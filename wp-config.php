@@ -29,6 +29,8 @@ if (isset($_SERVER['HTTP_X_FORWARDED_FOR'])) {
 /** The name of the database for WordPress */
 $env = getenv('ENV_VAR');
 if( $env == 'staging' ) {
+	define('WP_HOME','https://lasikwebsite.herokuapp.com/');
+	define('WP_SITEURL','https://lasikwebsite.herokuapp.com/');
 	define('DB_NAME', 'pizlbv23uy6u9zjb');
 
 	/** MySQL database username */
