@@ -121,7 +121,7 @@ get_header(); ?>
                 </li>
               </ul>
             </div>
-            <a class="modal-trigger location-search__show-all" href="#all-location ">View All Locations</a>
+            <a class="modal-trigger location-search__show-all" href="#all-location">View All Locations</a>
           </form>
         </div>
       </div>
