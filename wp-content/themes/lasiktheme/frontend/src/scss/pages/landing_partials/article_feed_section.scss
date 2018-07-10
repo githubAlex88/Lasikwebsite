@@ -1,0 +1,358 @@
+.article-feed-section {
+  position: relative;
+  padding-top: 120px;
+  .article-feed-title {
+    color: $white;
+    font-size: 24px;
+    font-family: $serif;
+    line-height: 1.4em;
+    text-align: left;
+    font-weight: 400;
+    margin-bottom: 15px;
+  }
+  .article-feed-presentation {
+    position: absolute;
+    width: 100%;
+    z-index: -1;
+    height: 260px;
+    transform: translate(0, -120px);
+    border-bottom: solid 5px #cb852a;
+  }
+  .upper-layer {
+    position: absolute;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    &:before,
+    &:after {
+      content: '';
+      display: block;
+      position: absolute;
+    }
+    .layer-presentation {
+      position: absolute;
+      background: url('./assets/images/lca-bg-mountains.png') $brand-primary;
+      clip-path: polygon(0 0, 100% 40%, 100% 100%, 0 100%);
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: top center;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 2;
+    }
+    &:before {
+      background-color: rgba(39, 58, 85, 0.63);
+      clip-path: polygon(0 0, 100% 40%, 100% 100%, 0 100%);
+      top: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 3;
+    }
+    &:after {
+      background-color: rgba(14,23,36,0.29);
+      top: 2px;
+      width: 100%;
+      height: 100%;
+      clip-path: polygon(0 0, 100% 40%, 100% 100%, 0 100%);
+      z-index: 1;
+    }
+  }
+  .bottom-layer {
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    &:before,
+    &:after {
+      content: '';
+      display: block;
+      position: absolute;
+    }
+    .layer-presentation {
+      position: absolute;
+      background: url('./assets/images/lca-bg-lower-layer.png') $brand-secondary;
+      clip-path: polygon(0 40%, 100% 0, 100% 100%, 0 100%);
+      background-repeat: no-repeat;
+      background-size: 75%;
+      background-position: top right;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 2;
+    }
+    &:before {
+      background-image: linear-gradient(30deg, rgba(255, 96, 0, 1) 0%, #f59b0f 100%);
+      clip-path: polygon(0 40%, 100% 0, 100% 100%, 0 100%);
+      top: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 3;
+    }
+    &:after {
+      background-color: rgba(14,23,36,0.29);
+      top: 2px;
+      width: 100%;
+      height: 100%;
+      clip-path: polygon(0 40%, 100% 0, 100% 100%, 0 100%);
+      z-index: 1;
+    }
+  }
+  .article-feed-main {
+    max-width: 400px;
+    width: 100%;
+    padding-top: 10px;
+    margin: 0px auto;
+    background: $white;
+  }
+  .s12 {
+    &.feed-banner-wrapper {
+      width: auto;
+      min-width: 100%;
+      padding: 0px;
+      margin: 0px -15px;
+    }
+  }
+}
+
+.article-feed {
+  &__content {
+    display: flex;
+    flex-wrap: wrap;
+    .social-reviews-wrapper {
+      order: 2;
+    }
+  }
+}
+
+@media screen and (min-width: $screen-sm) {
+  .article-feed-section {
+    padding-top: 170px;
+    .article-feed-title {
+      max-width: 610px;
+      margin-left: 25px;
+      margin-bottom: 40px;
+      font-size: 36px;
+    }
+    .article-feed-presentation {
+      height: 380px;
+      transform: translate(0, -170px);
+    }
+    .article-feed-main {
+      max-width: 760px;
+      padding-top: 20px;
+    }
+    .bottom-layer {
+      &:before {
+        background-image: linear-gradient(30deg, rgba(255, 96, 0, 0.4) 0%, #f59b0f 100%);
+      }
+    }
+    .s12 {
+      &.feed-banner-wrapper {
+        width: 100%;
+        padding: 0px 0.75rem;
+        margin: 0px;
+      }
+    }
+  }
+  .article-feed {
+    &__content {
+      display: block;
+    }
+  }
+}
+
+@media screen and (min-width: $screen-md) {
+  .article-feed-section {
+    .article-feed-title {
+      margin-left: 0px;
+    }
+    .article-feed-main {
+      max-width: 980px;
+      padding-top: 25px;
+    }
+  }
+}
+
+@media screen and (min-width: $screen-lg) {
+  .article-feed-section {
+    .article-feed-presentation {
+      height: 420px;
+      border-bottom: solid 3px #cb852a;
+      transform: translate(0, -220px);
+    }
+    .article-feed-main {
+      max-width: 1170px;
+      padding-top: 30px;
+    }
+  }
+}
+
+// .article-feed-section {
+//   text-align: center;
+//   position: relative;
+//   padding-top: 90px;
+
+//   @media (min-width: $screen-phone) {
+//     padding-top: 150px;
+//   }
+
+//   h2 {
+//     font-size: 18px;
+//     font-family: $serif;
+//     color: #fff;
+//     line-height: 1.4em;
+//     text-align: left;
+//     font-weight: 400;
+//     margin-bottom: 15px;
+
+//     @media (min-width: $screen-phone) {
+//       font-size: 24px;
+//     }
+
+//     @media (min-width: $screen-tablet) {
+//       font-size: 36px;
+//       max-width: 65%;
+//       margin-bottom: 40px;
+//       padding: 0 15px
+//     }
+
+//     @media (min-width: $screen-lg) {
+//       margin: 0 0px 40px;
+//       padding: 0;
+//       max-width: 100%;
+//       line-height: 30px;
+//     }
+//   }
+
+//   @media (min-width: $screen-tablet) {
+//     .container {
+//       padding: 0;
+//     }
+//   }
+
+
+//   .article-feed-main {
+//     display: inline-block;
+//     padding: 30px 15px;
+//     background-color: $white;
+//     @media (max-width: $screen-tablet) {
+
+//     }
+//     @media (max-width: $screen-desktop) {
+//       display: block;
+//       padding: 15px 0 0;
+//       margin: 0 auto;
+//       max-width: 93%;
+//     }
+//   }
+//   .social-reviews-wrapper {
+//     @media (max-width: $screen-tablet) {
+//       -webkit-box-ordinal-group: 2;
+//       order: 1;
+//     }
+//   }
+
+//   .article-feed-presentation {
+//     position: absolute;
+//     height: 220px;
+//     width: 100%;
+//     transform: translate(0, -100px);
+//     z-index: -1;
+//     border-bottom: solid 3px #cb852a;
+
+//     @media (min-width: $screen-phone) {
+//       height: 290px;
+//       transform: translate(0, -155px);
+//       border-bottom: solid 5px #cb852a;
+//     }
+//     @media (min-width: $screen-tablet) {
+//       height: 430px;
+//       transform: translate(0, -235px);
+//     }
+//   }
+//   .upper-layer {
+//     position: absolute;
+//     z-index: 2;
+//     width: 100%;
+//     height: 100%;
+//     top: 0;
+//     &:before,
+//     &:after {
+//       content: '';
+//       display: block;
+//       position: absolute;
+//     }
+//     .layer-presentation {
+//       position: absolute;
+//       background: url('./assets/images/lca-bg-mountains.png') $brand-primary;
+//       clip-path: polygon(0 0, 100% 40%, 100% 100%, 0 100%);
+//       background-repeat: no-repeat;
+//       background-size: cover;
+//       background-position: top center;
+//       top: 0;
+//       width: 100%;
+//       height: 100%;
+//       z-index: 2;
+//     }
+//     &:before {
+//       background-color: rgba(39, 58, 85, 0.63);
+//       clip-path: polygon(0 0, 100% 40%, 100% 100%, 0 100%);
+//       top: 0;
+//       width: 100%;
+//       height: 100%;
+//       z-index: 3;
+//     }
+//     &:after {
+//       background-color: rgba(14,23,36,0.29);
+//       top: 2px;
+//       width: 100%;
+//       height: 100%;
+//       clip-path: polygon(0 0, 100% 40%, 100% 100%, 0 100%);
+//       z-index: 1;
+//     }
+//   }
+//   .bottom-layer {
+//     position: absolute;
+//     z-index: 1;
+//     width: 100%;
+//     height: 100%;
+//     top: 0;
+//     &:before,
+//     &:after {
+//       content: '';
+//       display: block;
+//       position: absolute;
+//     }
+//     .layer-presentation {
+//       position: absolute;
+//       background: url('./assets/images/lca-bg-lower-layer.png') $brand-secondary;
+//       clip-path: polygon(0 40%, 100% 0, 100% 100%, 0 100%);
+//       background-repeat: no-repeat;
+//       background-size: 75%;
+//       background-position: top right;
+//       top: 0;
+//       width: 100%;
+//       height: 100%;
+//       z-index: 2;
+//     }
+//     &:before {
+//       background-image: linear-gradient(30deg, rgba(255, 96, 0, 0.4) 0%, #f59b0f 100%);
+//       clip-path: polygon(0 40%, 100% 0, 100% 100%, 0 100%);
+//       top: 0;
+//       width: 100%;
+//       height: 100%;
+//       z-index: 3;
+//     }
+//     &:after {
+//       background-color: rgba(14,23,36,0.29);
+//       top: 2px;
+//       width: 100%;
+//       height: 100%;
+//       clip-path: polygon(0 40%, 100% 0, 100% 100%, 0 100%);
+//       z-index: 1;
+//     }
+//   }
+// }

@@ -1,0 +1,94 @@
+@media screen and (min-width: $screen-sm) {
+	.menu {
+		display: flex;
+		align-items: center;
+		width: auto;
+		height: 84px;
+		box-shadow: none;
+		background-color: transparent;
+		.show-on-medium {
+			display: none;
+		}
+		.dropdown-right {
+			.dropdown {
+				text-align: right;
+			}
+		}
+		&__item {
+			padding: 0px 10px;
+			margin-bottom: 0px;
+			line-height: 1;
+			&.hover {
+				.menu__link {
+					&:after {
+						bottom: -3px;
+						z-index: 100;
+						height: 5px;
+						background-color: $brand-secondary;
+					}
+				}
+			}
+		}
+		.menu__link {
+			position: relative;
+			display: inline-block;
+			padding: 35px 0px;
+			color: $white;
+			font-size: 12px;
+			transition: .3s;
+			&:after {
+				content: '';
+				position: absolute;
+				bottom: 5px;
+				display: block;
+				width: 100%;
+				height: 5px;
+				transition: .3s;
+				background-color: transparent;
+			}
+			&:hover {
+				color: $brand-secondary;
+				&:after {
+					bottom: -3px;
+					height: 5px;
+					background-color: $brand-secondary;
+				}
+			}
+		}
+		.menu__icon {
+			height: auto;
+			color: $brand-secondary;
+			font-size: 18px;
+			line-height: 10px;
+		}
+		.current-menu-item {
+			.menu__link {
+				color: $brand-secondary;
+				&:after {
+					bottom: -3px;
+					height: 5px;
+					background-color: $brand-secondary;
+				}
+			}
+		}
+	}
+	nav {
+		a {
+			&.sidenav-trigger {
+				height: auto;
+				line-height: 1;
+			}
+		}
+	}
+}
+
+@media screen and (min-width: $screen-lg) {
+	.menu {
+		&__item {
+			padding: 0px 15px;
+		}
+		.menu__link {
+			font-size: 14px;
+		}
+	}
+}

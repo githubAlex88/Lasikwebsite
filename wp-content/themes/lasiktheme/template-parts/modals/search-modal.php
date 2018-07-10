@@ -8,9 +8,9 @@
   <!--=== Search Form start ===-->
   <div class="search-modal">
     <div class="search-modal__content">
-      <form action="" class="search-modal__form">
+      <form action="<?php echo esc_url( home_url( '/' ) ); ?>" class="search-modal__form" >
         <div class="input-field">
-          <input type="text" class="search-modal__input browser-default">
+          <input type="text" class="search-modal__input browser-default" name="s" value="<?php echo get_search_query(); ?>">
           <label for="location" class="search-modal__label">Search</label>
         </div>
         <button type="submit" class="search-modal__submit">

@@ -243,7 +243,7 @@
           </div>
 
           <div class="quiz__img-wrapper">
-            <img src="./assets/images/quiz-img.jpg" alt="img" class="quiz__img">
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/quiz-img.jpg" alt="img" class="quiz__img">
             <span class="quiz__caption">
               CINCINNATY LASIK & PRK VISION CENTER
             </span>

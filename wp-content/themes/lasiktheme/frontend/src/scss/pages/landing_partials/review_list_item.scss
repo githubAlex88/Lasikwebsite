@@ -1,0 +1,105 @@
+.review-list-item {
+  padding: 30px 0;
+  border-bottom: 1px solid $brand-primary;
+  .review-header {
+    display: flex;
+    flex-wrap: nowrap;
+    margin-bottom: 20px;
+  }
+  .reviewer-photo {
+    margin-right: 15px;
+  }
+  .reviewer-name {
+    font-family: $serif;
+    line-height: 1.2;
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+  .review-text {
+    color: $text-gray;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    margin-bottom: 0;
+  }
+  .review-date {
+    font-family: $serif;
+    color: $gray-ultra-light;
+  }
+  .reviewer-info {
+    flex: 1;
+  }
+}
+
+@media screen and (min-width: $screen-sm) {
+  .review-list-item {
+    padding: 20px 0px 15px;
+    margin-bottom: 0px;
+    .review-header {
+      margin-bottom: 10px;
+    }
+    .reviewer-photo {
+      width: 55px;
+      height: 55px;
+      margin-right: 10px;
+    }
+    .reviewer-name {
+      margin-bottom: 10px;
+      font-size: 11px;
+      letter-spacing: 0.45px;
+    }
+    .review-text {
+      font-size: 10px;
+      line-height: 15px;
+    }
+    .review-date {
+      font-size: 10px;
+      letter-spacing: 0.4px;
+    }
+  }
+}
+
+@media screen and (min-width: $screen-md) {
+  .review-list-item {
+    padding: 25px 0px;
+    .review-header {
+      margin-bottom: 15px;
+    }
+    .reviewer-photo {
+      width: 73px;
+      height: 73px;
+      margin-right: 13px;
+    }
+    .reviewer-name {
+      font-size: 15px;
+    }
+    .review-text {
+      font-size: 13px;
+      line-height: 20px;
+    }
+    .review-date  {
+      font-size: 13px;
+    }
+  }
+}
+
+@media screen and (min-width: $screen-lg) {
+  .review-list-item {
+    padding: 30px 0px;
+    .reviewer-photo {
+      width: 87px;
+      height: 87px;
+    }
+    .reviewer-name {
+      margin-bottom: 15px;
+      font-size: 18px;
+    }
+    .review-text {
+      font-size: 16px;
+      line-height: 24px;
+    }
+    .review-date {
+      font-size: 16px;
+    }
+  }
+}

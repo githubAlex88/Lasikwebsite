@@ -15,7 +15,6 @@
     {
         wp_enqueue_style( 'lasik-google-fonts', 
             'https://fonts.googleapis.com/css?family=Noto+Sans:400,400i,700,700i|Noto+Serif:400,400i,700,700i', false );
-        wp_enqueue_style('font-awesome', get_stylesheet_directory_uri() . '/assets/css/font-awesome.css'); 
         wp_enqueue_style( 'styles_css', get_template_directory_uri() . '/style.css' );
     }
 

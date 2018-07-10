@@ -1,0 +1,366 @@
+
+.spotlight {
+  padding-bottom: 20px;
+  background-color: #f6f6f6;
+  .container {
+    padding: 0px
+  }
+  .row {
+    margin: 0px;
+  }
+  .col {
+    padding: 0px
+  }
+  &__main-info {
+    position: relative;
+    max-width: 400px;
+    width: 100%;
+    margin: 0px auto;
+  }
+  &__header {
+    position: absolute;
+    top: 0px;
+    left: 20px;
+    right: 20px;
+  }
+  &__personal {
+    margin-bottom: 5px;
+    padding: 20px 15px 25px;
+    text-align: center;
+    background-color: #f6f6f6;
+  }
+  &__name {
+    position: relative;
+    margin-bottom: 10px;
+    padding-bottom: 15px;
+    font-size: 24px;
+    font-weight: 700;
+    font-family: $serif;
+    line-height: 25px;
+    &:after {
+      content: '';
+      position: absolute;
+      left: 50%;
+      bottom: -1px;
+      width: 150px;
+      height: 2px;
+      margin-left: -75px;
+      background-color: rgba(0, 0, 0, 0.2);
+    }
+  }
+  &__place {
+    margin-bottom: 0px;
+    font-size: 15px;
+    font-family: $serif;
+  }
+  &__work-experience {
+    padding: 15px 5px;
+    text-align: center;
+    background-color: #f6f6f6;
+    p {
+      margin-bottom: 0px;
+      font-size: 14px;
+      font-weight: bold;
+      font-family: $serif;
+    }
+  }
+  &__about {
+    position: absolute;
+    left: 20px;
+    right: 20px;
+    bottom: 20px;
+    padding: 10px;
+    font-size: 14px;
+    font-style: italic;
+    background-color: #f6f6f6;
+  }
+
+  .spotlight-with-photo {
+    margin-bottom: 20px;
+  }
+
+  &__profile-photo {
+    img {
+      display: block;
+      max-width: 100%;
+    }
+  }
+
+  &__review {
+    position: relative;
+    max-width: 400px;
+    width: 100%;
+    margin: 0px auto;
+    padding: 10px 20px;
+  }
+
+  .reviews-link {
+    position: relative;
+    display: block;
+    text-align: center;
+    padding: 15px;
+    &:after {
+      content: '';
+      position: absolute;
+      left: 50%;
+      bottom: 0px;
+      display: block;
+      width: 30px;
+      height: 2px;
+      margin-left: -15px;
+      background-color: $black;
+    }
+    svg {
+      width: 90px;
+      max-height: 24px;
+    }
+    .review-amount {
+      font-size: 12px;
+      color: $gray-light;
+    }
+    .star-bar {
+      .empty-stars {
+          svg {
+              fill: $gray-ultra-light;
+          }
+      }
+      .accentuated-stars {
+          svg {
+            fill: #f60000;
+          }
+      }
+    }
+    .star-bar {
+      span {
+        height: 16px;
+        width: 18px;
+      }
+      svg {
+        height: 16px;
+        width: 16px;
+      }
+      .empty-stars {
+        svg {
+          fill: $gray-ultra-light;
+        }
+      }
+      .accentuated-stars {
+        svg {
+          fill: #f60000;
+        }
+      }
+    }
+  }
+
+  .spotlight-with-review {
+    .button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      i {
+        margin-bottom: 0px;
+      }
+    }
+  }
+
+  .review-title {
+    margin-bottom: 15px;
+  }
+  .review-own {
+    margin-bottom: 5px;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 20px;
+  }
+  .review-hint {
+    color: #aaaaaa;
+    font-size: 14px;
+    line-height: 24px;
+  }
+  .review-body {
+    margin-bottom: 10px;
+    font-size: 14px;
+    line-height: 24px;
+  }
+}
+
+@media (min-width: $screen-xs) {
+  .spotlight {
+    padding: 30px 0px;
+    background-color: #f6f6f6;
+  }
+}
+
+@media (min-width: $screen-sm) {
+  .spotlight {
+    padding-bottom: 60px;
+    .row {
+      margin: 0px -15px;
+    }
+    .col {
+      padding: 0px 15px;
+    }
+    &__wrapper {
+      max-width: 760px;
+      width: 100%;
+      margin: 0px auto;
+    }
+    &__main-info {
+      display: inline-block;
+      max-width: 100%;
+      width: auto;
+      padding-top: 60px;
+    }
+    &__header {
+      bottom: 0px;
+    }
+    &__personal {
+      padding-bottom: 15px;
+    }
+    &__place {
+      font-size: 16px;
+      font-family: $sans;
+    }
+    &__work-experience {
+      position: absolute;
+      right: -20px;
+      bottom: 25px;
+      padding: 16px 20px 16px 10px;
+      text-align: right;
+      background: $white;
+      p {
+        margin-bottom: 5px;
+        font-size: 12px;
+        line-height: 18px;
+        font-family: $sans;
+        &:last-child {
+          margin-bottom: 0px;
+        }
+      }
+    }
+    .spotlight-with-photo {
+      margin-bottom: 0px;
+    }
+    &__review {
+      max-width: 100%;
+      padding: 0px;
+    }
+    &__about {
+      position: static;
+      padding: 0px
+    }
+    .review-title {
+      position: relative;
+      padding-bottom: 15px;
+      clear: both;
+      &:after {
+        content: '';
+        position: absolute;
+        left: 40px;
+        bottom: -1px;
+        width: 25px;
+        height: 2px;
+        background-color: $black;
+      }
+    }
+    .review-hint {
+      line-height: 18px;
+      &:after {
+        content: '';
+
+      }
+    }
+    .review-body {
+      margin-bottom: 20px;
+      line-height: 22px;
+    }
+    .reviews-link {
+      &:after {
+        content: none;
+      }
+    }
+  }
+}
+
+@media (min-width: $screen-md) {
+  .spotlight {
+    .row {
+      display: flex;
+      flex-wrap: wrap;
+    }
+    .column-reverse-l {
+      flex-direction: column-reverse;
+    }
+    .align-end-l {
+      align-items: flex-end;
+    }
+    &__wrapper {
+      max-width: 990px;
+    }
+    &__work-experience {
+      padding-left: 20px;
+      p {
+        font-size: 16px;
+      }
+    }
+    &__about {
+      margin-bottom: 20px;
+      line-height: 18px;
+      text-align: right;
+    }
+    .spotlight__review {
+      display: flex;
+      height: 100%;
+    }
+    .review-title {
+      &:after {
+        left: 0px;
+      }
+    }
+    .review-body {
+      margin-bottom: 50px;
+      font-size: 16px;
+      line-height: 28px;
+    }
+  }
+}
+
+@media (min-width: $screen-lg) {
+  .spotlight {
+    .row {
+      .col {
+        margin-left: 0px;
+      }
+    }
+    &__name {
+      margin-bottom: 15px;
+      font-size: 36px;
+      line-height: 42px;
+      &:after {
+        width: 350px;
+        margin-left: -175px;
+      }
+    }
+    &__place {
+      font-size: 18px;
+    }
+    &__wrapper {
+      max-width: 100%;
+    }
+    .justify-center-xl {
+      justify-content: center;
+    }
+    .align-center-xl {
+      align-items: center;
+    }
+    .review-title {
+      padding-bottom: 20px;
+      margin-bottom: 20px;
+    }
+    .review-body {
+      margin-bottom: 70px;
+      line-height: 30px;
+    }
+  }
+}

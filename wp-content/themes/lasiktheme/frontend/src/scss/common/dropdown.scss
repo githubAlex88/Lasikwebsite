@@ -1,0 +1,69 @@
+@media screen and (min-width: $screen-md) {
+	.dropdown {
+		display: none;
+		position: absolute;
+		top: 100%;
+		left: 0;
+		right: 0;
+		padding: 25px 0px;
+		background-color: $white;
+		box-shadow: inset -1px 17px 10px -15px rgba(14, 23, 36, 0.08);
+		&__list {
+			display: block;
+			max-width: 250px;
+			width: 100%;
+			li {
+				width: 100%;
+				margin-bottom: 20px;
+				&:last-child {
+					margin-bottom: 0px;
+				}
+			}
+			a {
+				position: relative;
+				display: inline-block;
+				padding-left: 15px;
+				color: #32435d;
+				font-size: 12px;
+				line-height: 16px;
+				&.active {
+					color: $brand-primary;
+					background-color: transparent;
+					&:before {
+						opacity: 1;
+						left: 15px;
+					}
+				}
+				&:before {
+					content: '\f105';
+					position: absolute;
+					top: 8px;
+					left: 0;
+					opacity: 0;
+					color: $brand-secondary;
+					transform: translateY(-50%);
+					font-family: 'Font Awesome 5 Pro';
+					transition: .3s
+				}
+				&:hover {
+					color: $brand-primary;
+					background-color: transparent;
+					&:before {
+						opacity: 1;
+						left: 3px;
+					}
+				}
+			}
+		}
+	}
+}
+
+@media screen and (min-width: $screen-lg) {
+  .dropdown {
+  	&__list {
+  		a {
+  			font-size: 14px;
+  		}
+  	}
+  }
+}

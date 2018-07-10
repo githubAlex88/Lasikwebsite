@@ -1,0 +1,70 @@
+// Normalize
+@import "node_modules/normalize-scss/sass/normalize/import-now";
+
+// Global varibles
+@import './variables';
+
+
+// Materialize
+@import './materialize/materialize';
+
+/**
+* Sierra
+*/
+@import 'node_modules/sierra-library/src/scss/utils/mixins';
+@import 'node_modules/sierra-library/src/scss/placeholders';
+@import 'node_modules/sierra-library/src/scss/main';
+@import 'node_modules/sierra-library/src/scss/background-colors';
+@import 'node_modules/sierra-library/src/scss/buttons';
+@import 'node_modules/sierra-library/src/scss/forms';
+@import 'node_modules/sierra-library/src/scss/helpers';
+@import 'node_modules/sierra-library/src/scss/layout';
+@import 'node_modules/sierra-library/src/scss/typography';
+@import 'node_modules/sierra-library/src/scss/badges';
+//@import 'node_modules/sierra-library/src/scss/flexboxgrid';
+//@import 'scss/loading-bar';
+//@import 'scss/loading-spinner';
+//@import 'scss/message-bars';
+//@import 'scss/paginator';
+//@import 'scss/rating-circle';
+//@import 'scss/tables';
+//@import 'scss/tabs';
+
+
+
+// Fonts
+@import './fonts/fa/fa-brands';
+@import './fonts/fa/fa-regular';
+@import './fonts/fa/fa-solid';
+@import './fonts/fa/fa-light';
+@import './fonts/fa/fontawesome';
+@import './fonts/font.scss';
+
+// Mixins
+@import './mixins/mixin.scss';
+
+// Plugins
+@import './plugins/plugin.scss';
+
+// Common .
+@import './common/helpers.scss';
+@import './common/app.scss';
+@import './common/buttons.scss';
+@import './common/links.scss';
+@import './common/typography.scss';
+@import './common/forms.scss';
+@import './common/header.scss';
+@import './common/menu.scss';
+@import './common/sidenav.scss';
+@import './common/submenu.scss';
+@import './common/actions.scss';
+@import './common/social.scss';
+@import './common/dropdown.scss';
+@import './common/footer.scss';
+@import './common/modal.scss';
+@import './common/search-modal.scss';
+@import './common/star_bar.scss';
+
+// for custom pages
+@import './pages/landing.scss';
+@import './pages/articles.scss';

@@ -1,0 +1,43 @@
+.star-bar {
+    display: inline-block;
+    position: relative;
+    font-size: 0;
+    height: 22px;
+    .empty-stars {
+        white-space: nowrap;
+        svg {
+            fill: $gray-ultra-light;
+        }
+    }
+    .accentuated-stars {
+        white-space: nowrap;
+        position: absolute;
+        top: 0;
+        left: 0;
+        overflow: hidden;
+        svg {
+            fill: $brand-secondary;
+        }
+    }
+    span {
+        display: inline-block;
+        padding: 0 1px;
+        height: 22px;
+        width: 24px;
+    }
+    svg {
+        height: 22px;
+        width: 22px;
+    }
+    .rate-0-0 { width: 0; }
+    .rate-0-5 { width: 10%; }
+    .rate-1-0 { width: 20%; }
+    .rate-1-5 { width: 30%; }
+    .rate-2-0 { width: 40%; }
+    .rate-2-5 { width: 50%; }
+    .rate-3-0 { width: 60%; }
+    .rate-3-5 { width: 70%; }
+    .rate-4-0 { width: 80%; }
+    .rate-4-5 { width: 90%; }
+    .rate-5-0 { width: 100%; }
+}

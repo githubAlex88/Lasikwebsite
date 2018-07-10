@@ -1,0 +1,220 @@
+.header {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  z-index: 100;
+  .brand-logo {
+    margin-top: 15px;
+    svg {
+      max-width: 160px;
+      width: 100%;
+      max-height: 35px;
+      height: 100%;
+    }
+  }
+}
+
+.header-top {
+  display: flex;
+  align-items: center;
+  min-height: 40px;
+  padding: 0px 15px 5px;
+  background-color: rgba(0,0,0,0.6);
+  transition: .3s;
+  .text-gray {
+    color: $gray-ultra-light;
+    transition: .3s;
+  }
+  &__content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
+  &__list {
+    display: flex;
+    margin: 0px;
+  }
+  &__item {
+    display: flex;
+    align-items: center;
+    margin: 0px 20px 0px 0px;
+    &--no-margin {
+      margin: 0px;
+    }
+    & > a {
+      & + a {
+        margin-left: 5px;
+      }
+    }
+  }
+  &__link {
+    display: block;
+    color: $white;
+    font-size: 32px;
+    transition: .3s;
+    &:hover {
+      color: $brand-secondary;
+    }
+  }
+}
+
+.header-bottom {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0px 15px;
+  transition: .3s;
+}
+
+@media screen and (min-width: $screen-sm) {
+  .header {
+    position: absolute;
+    transition: .5s;
+    .brand-logo {
+      svg {
+        max-width: 215px;
+        max-height: 50px;
+      }
+    }
+    &.header-fixed {
+      position: fixed;
+      top: -300px;
+      transition: 0s;
+      &.header-show {
+        top: 0;
+        transition: .5s;
+        box-shadow: 2px 4px 6px 1px rgba(14, 23, 36, 0.29);
+      }
+    }
+    &.header-fixed {
+      .header-top {
+        background-color: $brand-primary;
+        .text-gray {
+          color: $white;
+        }
+      }
+      .header-bottom {
+        background-color: $white;
+        .brand-logo {
+          svg {
+            fill: $brand-primary;
+          }
+        }
+        .menu {
+          &__link {
+            color: $brand-primary;
+            &:hover {
+              color: $brand-secondary;
+            }
+          }
+        }
+      }
+    }
+    &:hover {
+      .header-top {
+        background-color: $brand-primary;
+        .text-gray {
+          color: $white;
+        }
+      }
+      .header-bottom {
+        background-color: $white;
+        .brand-logo {
+          svg {
+            fill: $brand-primary;
+          }
+        }
+        .menu {
+          &__link {
+            color: $brand-primary;
+            &:hover {
+              color: $brand-secondary;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .header-top {
+    display: flex;
+    align-items: center;
+    padding: 0;
+    .header-top__list {
+      padding: 0px 15px;
+    }
+    &__info {
+      display: flex;
+    }
+    &__item {
+      margin-right: 20px;
+      &--no-margin {
+        margin: 0px;
+      }
+    }
+    &__link {
+      font-size: 14px;
+    }
+    &__btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 8px 15px;
+      color: $white;
+      font-size: 12px;
+      font-weight: 700;
+      text-align: center;
+      background-color: $brand-secondary;
+      &:visited {
+        color: $white;
+      }
+      &:hover {
+        color: $white;
+      }
+      .icon-calendar {
+        margin-right: 10px;
+        font-size: 24px;
+      }
+    }
+    &__icon {
+      margin-right: 10px;
+      color: $brand-secondary;
+      font-size: 18px;
+    }
+  }
+}
+
+@media screen and (min-width: $screen-md) {
+  .header {
+    .brand-logo {
+      display: inline-block;
+      margin-top: 15px;
+      svg {
+        max-width: 250px;
+        max-height: 55px;
+      }
+    }
+  }
+  .header-top {
+    &__btn {
+      padding: 8px 35px;
+    }
+  }
+  .header-bottom {
+    padding: 0px 35px;
+  }
+}
+
+@media screen and (min-width: $screen-lg) {
+  .header-top {
+    &__btn {
+      padding: 8px 40px;
+    }
+  }
+  .header-bottom {
+    padding: 0px 40px;
+  }
+}

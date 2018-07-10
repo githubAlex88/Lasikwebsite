@@ -1,0 +1,246 @@
+#quiz {
+	opacity: 0;
+	transition: .3s;
+	&.animate {
+		opacity: 1;
+	}
+}
+.quiz {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	&__header {
+		flex: none;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding: 5px 15px;
+	}
+	&__congratulations {
+		text-align: center;
+		h3 {
+			margin-bottom: 20px;
+			color: $brand-primary;
+			font-size: 26px;
+			line-height: 26px;
+		}
+		span {
+			color: $gray-ultra-light;
+			font-size: 16px;
+			text-transform: uppercase;
+		}
+		.quiz__back,
+		.quiz__close {
+			position: absolute;
+			color: $deep-blue;
+		}
+		.quiz__back {
+			top: 10px;
+			left: 15px;
+		}
+		.quiz__close {
+			top: 16px;
+			right: 15px;
+		}
+	}
+	&__back,
+	&__close {
+		padding: 0px;
+		&:focus {
+			background-color: transparent;
+		}
+	}
+	&__back {
+		color: $deep-blue;
+		font-size: 36px;
+		&.none {
+			visibility: hidden;
+		}
+	}
+	&__close {
+		color: $white;
+		font-size: 30px;
+	}
+	&__title {
+		max-width: 240px;
+		color: $white;
+		font-size: 16px;
+		line-height: 20px;
+		font-weight: 700;
+		letter-spacing: 4px;
+		text-align: center;
+		text-transform: uppercase;
+	}
+	&__content {
+		position: relative;
+		flex-grow: 1;
+		padding: 20px 0px 50px;
+		background-color: $white;
+	}
+	&__subtitle {
+		padding: 0px 20px;
+		margin-bottom: 30px;
+		color: $gray-ultra-light;
+		font-size: 18px;
+		font-weight: 400;
+		text-align: center;
+		letter-spacing: 0.45px;
+		&--small {
+			font-size: 15px;
+		}
+	}
+	&__number {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 100%;
+		margin-bottom: 15px;
+		&:before,
+		&:after {
+			content: '';
+			flex-grow: 1;
+			height: 1px;
+			background-color: $brand-light;
+		}
+		&--hide-left {
+			&:before {
+				opacity: 0.1;
+			}
+		}
+		&--hide-right {
+			&:after {
+				opacity: 0.1;
+			}
+		}
+		span {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			width: 45px;
+			height: 45px;
+			color: $brand-primary;
+			font-size: 18px;
+			border-radius: 50%;
+			border: 1px solid $brand-light;
+		}
+	}
+	&__button {
+		position: absolute;
+		left: 0px;
+		right: 0px;
+		bottom: 0px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		padding: 10px 40px 10px 20px;
+		width: 100%;
+		font-size: 18px;
+		font-weight: 400;
+		i {
+			position: absolute;
+			top: 50%;
+			left: 10px;
+			margin-right: auto;
+			margin-bottom: 0px;
+			transform: translateY(-50%);
+		}
+		&.button {
+			text-transform: uppercase;
+		}
+	}
+	&__caption {
+		max-width: 280px;
+		width: 100%;
+		display: block;
+		padding: 5px 40px;
+		color: $white;
+		font-size: 14px;
+		line-height: 18px;
+		margin: 0px auto;
+		text-align: center;
+		border-radius: 30px;
+		background-color: $brand-primary;
+		transform: translateY(-50%);
+	}
+	&__info {
+		display: flex;
+		max-width: 340px;
+		width: 100%;
+		margin: 0px auto;
+	}
+	&__calendar {
+		flex: none;
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+		justify-content: center;
+		width: 40%;
+		color: $white;
+		background-color: $brand-secondary;
+		i {
+			margin-bottom: 10px;
+			font-size: 50px;
+		}
+		p {
+			font-size: 15px;
+			line-height: 16px;
+			text-transform: uppercase;
+			margin-bottom: 0px;
+		}
+		&:focus {
+			background-color: $brand-secondary;
+		}
+	}
+	&__address {
+		display: flex;
+		align-items: center;
+		padding: 20px 15px;
+		margin-bottom: 0px;
+		font-size: 15px;
+		color: $gray-light;
+		background-color: #f2f2f2;
+	}
+}
+
+@media screen and (min-width: $screen-sm) {
+	.quiz {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-direction: column;
+		width: 100%;
+		&__header {
+			position: static;
+			max-width: 100%;
+			width: 100%;
+			margin-bottom: 20px;
+		}
+		&__back {
+			color: $white;
+		}
+		&__title {
+			max-width: 500px;
+			font-size: 26px;
+			line-height: 32px;
+		}
+		&__content {
+			width: 100%;
+			flex-grow: 0;
+		}
+		&__congratulations {
+			position: static;
+		}
+	}
+}
+
+@media screen and (min-width: $screen-md) {
+	.quiz {
+		max-width: 600px;
+		width: 100%;
+		margin: 0px auto;
+		&__title {
+			font-size: 36px;
+			line-height: 40px;
+		}
+	}
+}

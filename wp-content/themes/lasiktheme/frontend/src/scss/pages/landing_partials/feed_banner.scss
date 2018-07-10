@@ -1,0 +1,90 @@
+.feed-banner {
+  position: relative;
+  padding: 25px 35px;
+  margin: 0px 0px 20px;
+  word-break: break-word;
+  font-family: $serif;
+  background-image: linear-gradient(30deg, rgba(255,96,0, 0.67) 0%, rgba(245,155,15,0.67) 100%), 
+                    url('./assets/images/lca-hashtag.png'), 
+                    url('./assets/images/lca-banner-image.png'),
+                    url('./assets/images/lca-banner-bg.png');
+  background-position: center,left 5% top ,right bottom, center;
+  background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
+  background-size: cover, 15% , auto 100% ,cover;
+  &:after {
+    content: '';
+    position: absolute;
+    right: 5px;
+    bottom: 5px;
+    width: 35px;
+    height: 35px;
+    background: url('./assets/images/lca-banner-tw.png') no-repeat;
+    background-size: 100% 100%;
+  }
+
+  &__title {
+    max-width: 310px;
+    margin: 0px auto;
+    color: $white;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 26px;
+    text-align: center;
+    font-family: $serif;
+  }
+  &__link {
+    display: block;
+    color: $white;
+  }
+}
+
+
+@media screen and (min-width: $screen-sm) {
+  .feed-banner {
+    padding: 45px 15px 35px;
+    margin: 0px 0px 30px;
+    &:after {
+      right: 10px;
+      bottom: 10px;
+      width: 26px;
+      height: 27px;
+    }
+    &__title {
+      max-width: 540px;
+      font-size: 20px;
+      font-weight: 400;
+      line-height: 28px;
+    }
+    &__link {
+      text-decoration: underline;
+    }
+  }
+}
+
+@media screen and (min-width: $screen-md) {
+  .feed-banner {
+    background-position: center,left 5% top -20px ,right bottom -110px,center;
+    background-size: cover, 15% , auto 148% ,cover;
+    &:after {
+      right:15px;
+      bottom:15px;
+      width: 36px;
+      height: 36px;
+    }
+    &__title {
+      max-width: 735px;
+      font-size: 27px;
+      line-height: 40px;
+    }
+  }
+}
+
+@media screen and (min-width: $screen-lg) {
+  .feed-banner {
+    &__title {
+      max-width: 875px;
+      font-size: 32px;
+      line-height: 48px;
+    }
+  }
+}

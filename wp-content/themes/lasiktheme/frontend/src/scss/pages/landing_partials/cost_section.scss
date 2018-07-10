@@ -1,0 +1,253 @@
+.cost-section {
+  padding: 20px 0px;
+  overflow: hidden;
+  background-color: $brand-primary;
+  &__title {
+    position: relative;
+    padding-bottom: 30px;
+    margin-bottom: 35px;
+    font-size: 28px;
+    line-height: 32px;
+    font-family: $serif;
+    span {
+      font-weight: bold;
+      font-style: italic;
+    }
+    &:after {
+      content: '';
+      position: absolute;
+      left: 20px;
+      bottom: 0px;
+      display: block;
+      width: 80px;
+      height: 2px;
+      background-color: $white;
+    }
+  }
+
+  .rotator-shown-values {
+    position: relative;
+    min-height: 200px;
+    padding: 0 15px;
+    transform: translate(0px, 0px);
+    transition: all 0.3s ease-in-out;
+    &.out {
+      opacity: 0;
+      transform: translate(0, 20px);
+    }
+  }
+
+  .rotator-shown-values-wrapper {
+    position: relative;
+    padding: 30px 0 20px;
+  }
+
+}
+
+.rotator {
+  position: relative;
+  max-width: 260px;
+  width: 100%;
+  height: 260px;
+  padding: 15px;
+  margin: auto;
+  z-index: 1;
+  .rotator-circle {
+    position: relative;
+    height: 100%;
+    background-color: $brand-primary;
+  }
+  .bg-rotator {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 180px;
+    height: 180px;
+    padding: 15px;
+    border: 2px solid rgba(lighten($gray-ultra-light, 30%), 0.12);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    svg {
+      fill: $white;
+      fill-opacity: 0.2;
+      stroke: white;
+      stroke-width: 0.5;
+    }
+  }
+  .border-rotator {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    will-change: transform;
+    transition: transform 1s ease-in-out;
+    svg {
+      transform: rotate(-90deg);
+      overflow: visible;
+    }
+    .border-path {
+      stroke-dasharray: 157;
+      stroke-linecap: round;
+      will-change: stroke-dashoffset;
+      transition: stroke-dashoffset 1s ease-in-out;
+    }
+  }
+  .numbers {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    will-change: transform;
+    transition: transform 1s ease-in-out;
+    z-index: 1;
+  }
+
+  .each {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border: 2px solid $brand-primary;
+    background-color: $brand-dark;
+    color: $brand-primary;
+    border-radius: 50%;
+    will-change: transform;
+    transition: all 1s ease-in-out;
+    cursor: pointer;
+    &.active {
+      color: $white;
+      box-shadow: 0 0 0 7px rgba(0, 0, 0, 0.05);
+      border: 2px solid #5a87c6;
+      background-color: $white;
+      color: $brand-dark;
+    }
+  }
+
+  .number {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 16px;
+    text-align: center;
+    will-change: transform;
+    text-transform: uppercase;
+    transition: transform 1s ease-in-out;
+  }
+
+  .each:nth-child(1) {
+    right: -25px;
+    top: 50%;
+    margin-top: -25px;
+  }
+
+  .each:nth-child(2) {
+    bottom: -25px;
+    left: 50%;
+    margin-left: -25px;
+  }
+
+  .each:nth-child(3) {
+    left: -25px;
+    top: 50%;
+    margin-top: -25px;
+  }
+
+  .each:nth-child(4) {
+    top: -25px;
+    left: 50%;
+    margin-left: -25px;
+  }
+
+}
+
+@media screen and (min-width: $screen-sm) {
+  .cost-section {
+    padding: 65px 30px 40px;
+    &__title {
+      font-size: 36px;
+      line-height: 42px;
+      &:after {
+        left: 0px;
+        width: 100px;
+        height: 3px;
+      }
+    }
+    .rotator-connector {
+      position: absolute;
+      z-index: 0;
+      top: 155px;
+      right: calc(100% + 2px);
+      display: block;
+      width: 50%;
+      height: 2px;
+      background-color: rgba(lighten($gray-ultra-light, 30%), 0.12);
+    }
+    .rotator-shown-values-wrapper {
+      border-left: 2px solid rgba(lighten($gray-ultra-light, 30%), 0.12);
+      &:before,
+      &:after {
+        content: '';
+        width: 5px;
+        height: 2px;
+        position: absolute;
+        left: 0;
+        background-color: rgba(lighten($gray-ultra-light, 30%), 0.12);
+      }
+      &:before {
+        top: 0;
+      }
+      &:after {
+        bottom: 0;
+      }
+    }
+  }
+  .rotator {
+    max-width: 310px;
+    height: 310px;
+    .bg-rotator {
+      width: 225px;
+      height: 225px;
+    }
+  }
+}
+
+@media screen and (min-width: $screen-md) {
+  .cost-section {
+    padding-left: 0px;
+    padding-right: 0px;
+    .rotator-connector {
+      top: 185px;
+    }
+  }
+  .rotator {
+    max-width: 375px;
+    height: 375px;
+    .bg-rotator {
+      width: 255px;
+      height: 255px;
+    }
+  }
+}
+
+@media screen and (min-width: $screen-lg) {
+  .cost-section {
+    &__title {
+      margin-bottom: 0px
+    }
+    .rotator-connector {
+      top: 185px;
+    }
+  }
+  .rotator {
+    padding: 25px;
+  }
+}

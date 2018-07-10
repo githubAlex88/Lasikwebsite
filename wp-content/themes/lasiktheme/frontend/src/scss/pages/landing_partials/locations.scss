@@ -1,0 +1,85 @@
+.locations {
+	&__list {
+		columns: 2;
+		margin: 0px;
+	}
+	&__item {
+		width: 100%;
+		margin: 0;
+		text-align: center;
+	}
+	&__link {
+		display: inline-block;
+		width: 100%;
+		padding: 8px 12px;
+		color: #1e2e45;
+		font-size: 14px;
+		&:hover {
+			color: $brand-primary;
+			background-color: $white;
+		}
+		&.active {
+			color: $brand-primary;
+			background-color: $white;
+		}
+	}
+	&__nav {
+		margin-bottom: 40px;
+	}
+	&__position {
+		overflow-y: auto;
+		background-color: $brand-primary;
+	}
+	&__position {
+		flex: none;
+		max-width: 400px;
+		width: 100%;
+		margin: 0px auto;
+	}
+	&__img-wrapper {
+		margin-bottom: 20px;
+	}
+}
+
+@media screen and (min-width: $screen-sm) {
+	.locations {
+		display: flex;
+		&__nav {
+			flex: none;
+			max-width: 260px;
+			width: 100%;
+			margin-right: 25px;
+		}
+		&__item {
+			text-align: left;
+		}
+		&__items {
+			display: flex;
+			flex-wrap: wrap;
+			.location-item {
+				max-width: 50%;
+				padding-right: 20px;
+			}
+		}
+		&__nav {
+			margin-bottom: 0px;
+		}
+		&__position {
+			margin: 0px;
+		}
+	}
+}
+
+@media screen and (min-width: $screen-md) {
+	.locations {
+		justify-content: space-between;
+		max-width: 780px;
+		width: 100%;
+		&__nav {
+			max-width: none;
+			width: auto;
+			flex-grow: 1;
+			margin-right: 45px;
+		}
+	}
+}

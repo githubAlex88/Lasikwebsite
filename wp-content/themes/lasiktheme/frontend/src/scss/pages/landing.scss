@@ -1,0 +1,35 @@
+@import './pages/landing_partials/top_section.scss';
+@import './pages/landing_partials/top_subsection.scss';
+@import './pages/landing_partials/location_search.scss';
+@import './pages/landing_partials/special_offer.scss';
+@import './pages/landing_partials/patient_stories.scss';
+@import './pages/landing_partials/cost_section.scss';
+@import './pages/landing_partials/cost_item.scss';
+@import './pages/landing_partials/doctor_spotlight.scss';
+@import './pages/landing_partials/downloads_section.scss';
+@import './pages/landing_partials/article_feed_section.scss';
+@import './pages/landing_partials/feed_banner.scss';
+@import './pages/landing_partials/social_reviews.scss';
+@import './pages/landing_partials/review_list_item.scss';
+@import './pages/landing_partials/quiz.scss';
+@import './pages/landing_partials/answers.scss';
+@import './pages/landing_partials/locations.scss';
+@import './pages/landing_partials/location-item.scss';
+@import './pages/landing_partials/current_position.scss';
+@import './pages/landing_partials/article.scss';
+@import './pages/landing_partials/feed-instagram.scss';
+
+
+
+html, body {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  font-size: 16px;
+
+  @media (min-width: $screen-tablet) {
+    font-size: 14px;
+  }
+}

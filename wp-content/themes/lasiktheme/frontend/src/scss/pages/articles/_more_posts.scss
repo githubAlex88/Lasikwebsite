@@ -1,0 +1,124 @@
+.wrap-more-posts {
+  margin: 40px auto 60px;
+  max-width: 800px;
+  padding: 0 10px;
+  .author-title {
+    position: relative;
+    margin-top: 40px;
+    &:after {
+      background: #e3e5e7;
+      height: 1px;
+      position: absolute;
+      left: 0;
+      top:6px;
+      width: 100%;
+      content: '';
+      z-index: 0;
+    }
+    span {
+      background: #fff;
+      z-index: 1;
+      position: relative;
+      text-transform: uppercase;
+      font-size: 12px;
+      font-family: $sans;
+      color: rgb(80, 85, 91);
+      font-weight: bold;
+      line-height: 1.4em;
+    }
+  }
+  .about-author {
+    margin-top: 30px;
+    text-align: center;
+    img {
+      border-radius: 50%;
+    }
+    .info {
+      margin-top:20px;
+    }
+    .name {
+      margin-bottom: 15px;
+      font-size: 16px;
+      font-family: $sans;
+      color: #000000;
+      font-weight: bold;
+    }
+    .description {
+      font-size: 16px;
+      font-family: $sans;
+      color: #000000;
+      line-height: 2em;
+      a{
+        color: rgb(119, 163, 224);
+      }
+    }
+  }
+  .title {
+    text-align: center;
+    border-top: solid 1px #e3e5e7;
+    border-bottom: solid 1px #e3e5e7;
+    padding: 20px 0;
+
+   a{
+     font-size: 18px;
+     font-family: $sans;
+     color: #50555b;
+     font-weight: bold;
+     line-height: 1.3em;
+
+     span {
+       vertical-align: middle;
+       color: #50555b;
+     }
+
+      i {
+        font-size: 24px;
+        color: #f19b2b;
+        vertical-align: middle;
+        margin-left: 10px;
+      }
+   }
+  }
+}
+
+
+@media screen and (min-width: $screen-phone) {
+  .wrap-more-posts {
+    margin: 60px auto 100px;
+    .author-title {
+      margin-top: 50px;
+    }
+    .about-author {
+      margin-top: 35px;
+      display: flex;
+      flex-direction:row;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      .info {
+        margin-top:0;
+        width: calc(100% - 120px);
+        text-align: left;
+        align-items: flex-start;
+      }
+      .name {
+        margin-bottom: 10px;
+        font-size: 18px;
+      }
+      .description {
+        font-size: 18px;
+      }
+    }
+    .title {
+      padding: 50px 0;
+
+     a{
+       font-size: 30px;
+
+        i {
+          font-size: 36px;
+          margin-left: 35px;
+        }
+     }
+    }
+  }
+}

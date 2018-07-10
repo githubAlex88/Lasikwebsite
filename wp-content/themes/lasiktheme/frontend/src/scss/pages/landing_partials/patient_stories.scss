@@ -1,0 +1,338 @@
+.patient-stories {
+  position: relative;
+  padding: 0;
+  background: url('./assets/images/lca-mountain-image.png') center no-repeat;
+  background-size: cover;
+
+  .container {
+    position: relative;
+  }
+
+  &:after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(90, 135, 198, 0.43);
+  }
+
+  &__slider {
+    position: relative;
+    max-width: 400px;
+    width: 100%;
+    margin: 0px auto;
+    z-index: 1;
+  }
+
+  .container {
+    padding: 0px
+  }
+  
+  .row {
+    margin: 0px;
+  }
+
+  &__item {
+    position: relative;
+  }
+
+  .img {
+    padding: 0px;
+  }
+
+  .info {
+    padding: 0px;
+    &__header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 10px;
+    }
+  }
+
+  &__number {
+    margin-left: 10px;
+    font-size: 10px;
+    font-family: $sans;
+    color: rgb(146, 146, 146);
+  }
+
+  &__content {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.85);
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      i {
+        margin: 0px 20px 0px 0px;
+      }
+    }
+  }
+
+  &__title {
+    margin-bottom: 10px;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 30px;
+  }
+
+  &__subtitle {
+    margin-bottom: 10px;
+    color: rgb(90, 135, 198);
+    font-size: 8px;
+    line-height: 10px;
+    text-transform: uppercase;
+  }
+
+  &__description {
+    margin-bottom: 15px;
+    color: $black;
+    font-size: 14px;
+    line-height: 28px;
+  }
+}
+
+.custom-nav {
+  display: flex;
+  align-items: center;
+  &__item {
+    padding: 0px;
+    margin-right: 10px;
+    color: $brand-secondary;
+    font-size: 36px;
+    &:focus {
+      background: none;
+    }
+    &:last-of-type {
+      margin-right: 0px;
+    }
+  }
+}
+
+.custom-dots {
+  display: flex;
+  margin: 0px;
+  &__item {
+    width: 20px;
+    height: 20px;
+    margin-right: 7px;
+    margin-bottom: 0px;
+    font-size: 0px;
+    text-indent: -9999px;
+    background: url('./assets/svg/nav.svg') center no-repeat;
+    &:hover {
+      background-image: url('./assets/svg/nav-1.svg');
+    }
+    &:last-child {
+      margin-right: 0px;
+    }
+    &.active {
+      background-image: url('./assets/svg/nav-1.svg');
+    }
+  }
+}
+
+@media (min-width: $screen-xs)  {
+  .patient-stories {
+    padding: 30px 0px 60px;
+  }
+}
+
+@media (min-width: $screen-sm) {
+  .patient-stories {
+    padding: 30px 0px;
+    &__slider {
+      max-width: 100%;
+    }
+    &__item {
+      width: 100%;
+      padding: 30px 0px;
+      .row {
+        position: relative;
+        max-width: 690px;
+        margin: 0px auto;
+        padding: 30px 35px 55px;
+        background-color: $white;
+      }
+    }
+    &__content {
+      position: static;
+      .button {
+        max-width: 370px;
+      }
+    }
+
+    .phone {
+        position: relative;
+        display: inline-block;
+        z-index: 1;
+        img {
+          position: relative;
+          z-index: 1;
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        &:before {
+          content: '';
+          position: absolute;
+          top: -50px;
+          left: -60px;
+          z-index: 0;
+          width: 224px;
+          height: 224px;
+          opacity: 0;
+          background: url('./assets/images/img-phone-2.jpg');
+          box-shadow: 2px 4px 6px 1px rgba(14,23,36,0.21);
+          transform: translate(-30px, -30px);
+        }
+        &:after {
+          content: '';
+          position: absolute;
+          right:-15px;
+          bottom: -25px;
+          z-index: 0;
+          width: 224px;
+          height: 224px;
+          opacity: 0;
+          background: url('./assets/images/img-phone-1.jpg');
+          box-shadow: 2px 4px 6px 1px rgba(14,23,36,0.21);
+          transform: translate(30px, 30px);
+        }
+    }
+
+    .slick-current {
+      &.animated {
+        .info {
+          opacity: 1;
+          transition: opacity 0.4s;
+          transition-delay: 0.6s;
+        }
+        .phone {
+          &:after, &:before {
+            opacity: 1;
+            transition: opacity 0.4s, transform 0.4s;
+            transition-delay: 0.5s;
+            transform: translate(0px, 0px);
+          }
+          img {
+            opacity: 1;
+            transform: translateY(0px);
+            transition: opacity 0.4s, transform 0.4s;
+            transition-delay: 0.5s;
+          }
+        }
+      }
+    }
+
+    .info {
+      padding-top: 25px;
+      opacity: 0;
+      &__header {
+        justify-content: flex-end;
+        margin-bottom: 30px;
+      }
+    }
+
+    &__number {
+      margin-left: 15px;
+      font-size: 12px;
+    }
+
+    &__content {
+      text-align: right;
+      padding: 0px 0px 0px 10px;
+      .button {
+        font-size: 14px;
+        letter-spacing: 0.35px;
+      }
+    }
+
+    &__title {
+      margin-bottom: 20px;
+      font-size: 24px;
+    }
+    &__subtitle {
+      margin-bottom: 20px;
+      font-size: 12px;
+      line-height: 18px;
+    }
+    &__description {
+      margin-bottom: 55px;
+      color: rgb(146, 146, 146);
+      font-size: 16px;
+    }
+  }
+
+  .custom-dots {
+    position: absolute;
+    right: 30px;
+    bottom: 25px;
+    &__item {
+      margin-right: 10px;
+      &:last-child {
+        margin-right: 0px;
+      }
+    }
+  }
+
+}
+
+@media (min-width: $screen-md) {
+  .patient-stories {
+    &__item {
+      .row {
+        max-width: 930px;
+        padding: 30px 50px 70px;
+      }
+    }
+
+    .img {
+      text-align: right;
+    }
+
+    &__title {
+      margin-bottom: 25px;
+      font-size: 36px;
+      line-height: 42px;
+    }
+    &__subtitle {
+      margin-bottom: 25px;
+    }
+    &__description {
+      line-height: 30px;
+    }
+  }
+}
+
+@media (min-width: $screen-md) {
+  .patient-stories {
+    &__item {
+      .row {
+        max-width: 100%;
+        padding-right: 90px;
+      }
+    }
+
+    .img {
+      padding-left: 60px;
+      text-align: left;
+    }
+  }
+}
+
+@media (min-width: $screen-tablet) {
+  .patient-stories {
+    .category {
+      font-size: 12px;
+    }
+  }
+}

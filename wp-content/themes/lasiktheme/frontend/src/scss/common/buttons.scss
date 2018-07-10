@@ -1,0 +1,147 @@
+.button:not(:disabled) {
+  box-shadow: 2px 4px 6px 1px rgba(14, 23, 36, 0.21);
+  transition: all 0.150s ease;
+  text-transform: capitalize;
+  &:active {
+    box-shadow: 0px 0px 0px 0px rgba(14, 23, 36, 0.21);
+  }
+  &:hover {
+    opacity: 0.9;
+  }
+  margin: initial;
+}
+
+.button {
+  i {
+    font-size: 30px;
+  }
+  &.button-big {
+    min-height: auto;
+    //max-height: 49px;
+    @include breakpoint(bp-large) {
+      padding: 5px 15px;
+    }
+    @media (max-width: $screen-phone) {
+      font-size: 14px;
+      min-height: 45px;
+    }
+  }
+
+  &.button-full-width {
+    width: 100%;
+  }
+
+  .fa-stack,
+  > i {
+    float: left;
+  }
+}
+
+
+.button-default {
+  &:focus,
+  &:active,
+  &:hover {
+    color: $white;
+  }
+}
+
+.btn-simple {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 15px 20px;
+  font-weight: 700;
+  line-height: 18px;
+  text-align: center;
+  &:hover {
+    color: $white;
+    opacity: 0.9;
+  }
+  &:focus,
+  &:active {
+    color: $white;
+  }
+
+  &--icon {
+    position: relative;
+    padding-left: 50px;
+  }
+
+  &__text {
+    width: 100%;
+    font-size: 14px;
+    &--small {
+      font-size: 12px;
+    }
+  }
+
+  &--orange {
+    color: $white;
+    background-color: $brand-secondary;
+  }
+  &--dark-blue {
+    color: $white;
+    background-color: $brand-dark;
+  }
+  &--dark-green {
+    color: $white;
+    background-color: $color-success;
+  }
+
+
+  &--big {
+    max-width: 380px;
+  }
+  &--full-width {
+    max-width: 100%;
+  }
+  
+  &__icon {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    font-size: 30px;
+    transform: translateY(-50%);
+    &--static {
+      position: static;
+      margin-right: 5px;
+      transform: translateY(0%);
+    }
+  }
+}
+
+@media screen and (min-width: $screen-sm) {
+  .btn-simple {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    
+    &--icon {
+      padding-left: 60px;
+    }
+
+    &__text {
+      font-size: 16px;
+      &--small {
+        font-size: 12px;
+      }
+    }
+
+    &__icon {
+      left: 20px;
+    }
+  }
+}
+
+@media screen and (min-width: $screen-sm) {
+  .btn-simple {
+
+    &__text {
+      &--small {
+        font-size: 14px;
+      }
+    }
+
+  }
+}

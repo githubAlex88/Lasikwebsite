@@ -1,0 +1,145 @@
+.search-modal {
+	&__content {
+		position: relative;
+		max-width: 1070px;
+		width: 100%;
+		margin: 60px 0px 20px;
+	}
+	.search-modal__label {
+		top: 50%;
+		padding-left: 10px;
+		color: $white;
+		font-size: 18px;
+		line-height: 18px;
+		transition: .3s;
+		transform: translateY(-50%);
+		&.active {
+			top: 0%;
+			color:  #1e2e45;
+			font-size: 16px;
+		}
+	}
+	&__form {
+		position: relative;
+	}
+	.search-modal__input {
+		width: 100%;
+		height: 40px;
+		margin-bottom: 0;
+		padding-left: 10px;
+		padding-right: 28px;
+		color: $white;
+		font-size: 18px;
+		background-color: transparent;
+		border: none;
+		border-bottom: 2px solid rgba(255, 255, 255, 0.5);
+	}
+	&__submit {
+		position: absolute;
+		top: 50%;
+		right: 0px;
+		padding: 0px;
+		color: rgba(255, 255, 255, 0.5);
+		font-size: 24px;
+		transform: translateY(-50%);
+	}
+	&__result {
+		position: absolute;
+		top: 100%;
+		display: none;
+		width: 100%;
+		margin: 0px;
+	}
+	&__item {
+		padding: 5px 15px;
+		margin-bottom: 1px;
+		background-color: rgba(255, 255, 255, 0.3);
+		cursor: pointer;
+		&:hover {
+			background-color: rgba(255, 255, 255, 0.5);
+		}
+		span {
+			color:  #1e2e45;
+			font-size: 14px;
+		}
+		p {
+			color: $white;
+			font-size: 18px;
+			margin-bottom: 0px;
+		}
+	}
+}
+
+@media screen and (min-width: 601px) {
+	.search-modal {
+		.search-modal__input {
+			font-size: 36px;
+			height: 50px;
+			border-bottom-width: 3px;
+		}
+		&__submit {
+			font-size: 30px;
+		}
+	}
+
+}
+
+@media screen and (min-width: 768px) {
+	.search-modal {
+		&__content {
+			margin-top: 100px;
+		}
+		.search-modal__input {
+			height: 60px;
+			padding-right: 35px;
+		}
+		&__submit {
+			font-size: 36px;
+		}
+		&__item {
+			padding: 10px 20px;
+			span {
+				font-size: 16px;
+			}
+			p {
+				font-size: 20px;
+			}
+		}
+	}
+}
+
+@media screen and (min-width: 992px) {
+	.search-modal {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		height: 100%;
+		&__content {
+			margin-top: 20px;
+		}
+		&__label {
+			padding-left: 20px;
+			font-size: 18px;
+		}
+		&__form {
+			width: 100%;
+		}
+		.search-modal__input {
+			height: 65px;
+			padding-left: 20px;
+			padding-right: 45px;
+		}
+		&__submit {
+			font-size: 36px;
+		}
+		&__item {
+			padding: 12px 30px;
+			span {
+				font-size: 16px;
+			}
+			p {
+				font-size: 30px;
+			}
+		}
+	}
+}

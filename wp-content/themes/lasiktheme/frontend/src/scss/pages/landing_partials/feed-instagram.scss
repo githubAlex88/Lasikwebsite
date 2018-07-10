@@ -1,0 +1,106 @@
+.feed-instagram {
+  margin: 0px -15px;
+  overflow: hidden;
+  background: #5a87c6;
+  .item {
+    max-width: 400px;
+    width: 100%;
+    margin: 0px auto 2px;
+    img {
+      width: 100%;
+    }
+  }
+
+  .instagram-link  {
+    display: none;
+    text-align: center;
+    padding: 12px 0;
+    &.mobile {
+      display: block;
+    }
+
+    svg {
+      max-width: 25px;
+      max-height: 25px;
+      fill: $white;
+      vertical-align: middle;
+      border-radius: 3px;
+    }
+    span {
+      display: inline-block;
+      vertical-align: middle;
+      margin-left: 20px;
+      font-size: 14px;
+      font-family: $sans;
+      color: #fff;
+      line-height: 1.5em;
+      position: relative;
+      font-weight: 400;
+      &:before {
+        background: #80a2d3;
+        width:1px;
+        height: 20px;
+        top:50%;
+        margin-top: -10px;
+        left:-11px;
+        content: "";
+        position: absolute;
+      }
+    }
+  }
+
+}
+
+@media screen and (min-width: $screen-sm) {
+  .feed-instagram {
+    margin: 0px 15px 30px;
+    padding: 20px 20px 0;
+    background: url('./assets/images/bg-feed-instagram.jpg') no-repeat;
+    background-size: cover;
+    background-position: center center;
+    &__list {
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: row;
+      justify-content: space-between;
+      .item {
+        width: calc(1/3*100% - (1 - 1/3)*20px)
+      }
+    }
+    .item {
+      max-width: none;
+      margin-bottom: 0px;
+    }
+    .instagram-link  {
+        display: block;
+        padding: 15px 0;
+        &.mobile {
+          display: none;
+        }
+        svg {
+          max-width: 34px;
+          max-height: 34px;
+          vertical-align: middle;
+        }
+        span {
+          font-size: 16px;
+          margin-left: 30px;
+          &:before {
+            background: #80a2d3;
+            width:1px;
+            height: 32px;
+            margin-top: -16px;
+            left:-16px;
+          }
+        }
+
+    }
+
+  }
+}
+
+@media screen and (min-width: $screen-xs) and (max-width: $screen-sm) {
+  .feed-instagram {
+    margin-top: 30px;
+  }
+}
