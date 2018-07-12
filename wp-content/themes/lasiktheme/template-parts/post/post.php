@@ -37,28 +37,43 @@
 		</h1>
 	</div>
 </div> 
-<div class="wrap-article-detail">
+<div class="wrap-article-detail" data-scroll-target>
 	<div class="container">
 		<div class="article-detail-content">
 			<?php the_content(); ?>
 		</div>
 	</div>
 </div>
-<div class="sticky-footer fixed">
+<div class="sticky-footer">
 	<div class="container">
 		<div class="sticky-footer__content">
 			<div href="#" class="sticky-footer__question hide-on-small-only">
 				<i class="far fa-file-alt sticky-footer__icon"></i>
-				<a href="#" class="sticky-footer__link"><b>Did you know:</b> Over 99% of LASIK procedures performed by LCA result in 20/20 vision or better?</a>
+				<a href="#" class="sticky-footer__link">
+					<b>Did you know:</b>  Over 99% of LASIK procedures performed by LCA result in 20/20 vision or better?
+				</a>
 			</div>
 			<div class="social social--horizontal">
 				<h2 class="social__title">Share:</h2>
 				<ul class="social__list">
-					<li class="social__item"><a href="#" class="social__link"><i class="fab fa-twitter"></i></a></li>
-					<li class="social__item"><a href="#" class="social__link"><i class="fab fa-facebook-f"></i></a></li>
-					<li class="social__item"><a href="#" class="social__link"><i class="far fa-link"></i></a></li>
+					<li class="social__item">
+						<a href="#" class="social__link">
+							<i class="fab fa-twitter"></i>
+						</a>
+					</li>
+					<li class="social__item">
+						<a href="#" class="social__link">
+							<i class="fab fa-facebook-f"></i>
+						</a>
+					</li>
+					<li class="social__item">
+						<a href="#" class="social__link">
+							<i class="far fa-link"></i>
+						</a>
+					</li>
 				</ul>
 			</div>
+
 		</div>
 	</div>
 </div>

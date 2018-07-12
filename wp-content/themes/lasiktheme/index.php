@@ -25,7 +25,7 @@ if ( has_post_thumbnail( get_queried_object_id() ) ) :
 	?>
 	<section class="wrap-article-top" style="background-image:url(<?php echo $image[0]; ?>)">
 		<div class="container">
-			<h1><?php echo single_post_title(); ?></h1>
+			<h1><?php the_field('article_title', get_option('page_for_posts')); ?></h1>
 			<a href="#" class="button button-secondary button-big" data-open-submenu="#submenu-resources">
 			What Would You Like to Learn More About?
 			</a>
