@@ -16,17 +16,6 @@ $states = $state_field['choices'];
 
       <div class="locations">
         <div class="locations__nav">
-          <script>
-            jQuery( function() {
-              jQuery( jQuery('.locations__link.active').attr('href') ).show();
-              jQuery('.locations__link').click( function () {
-                jQuery('.locations__link').removeClass('active');
-                jQuery(this).addClass('active');
-                jQuery('.location__items-wrapper').hide();
-                jQuery( jQuery(this).attr('href') ).show();
-              });
-            });
-          </script>
           <ul class="locations__list">
             <?php foreach( $states as $state_code => $state_name ) : ?>
             <li class="locations__item">
@@ -48,29 +37,38 @@ $states = $state_field['choices'];
               'meta_value'	=> $state_code
             );
             $the_query = new WP_Query( $args );
+            $map_src = "http://maps.googleapis.com/maps/api/staticmap?key=AIzaSyATq-O1KcWeOwIlHV5eZ07IXP1nBw1_rAk&size=400x215&markers=icon:https://www.lasikplus.com/assets/images/marker.png";
           ?>
             <div id="location-<?php echo $state_code; ?>" class="location__items-wrapper" style="display: none;">
               <?php if( $the_query->have_posts() ): ?>
                 <div class="locations__img-wrapper">
-                  <img src="<?php echo get_template_directory_uri(); ?>/assets/images/map.png" alt="img" class="locations__img">
+                  <img src="http://maps.googleapis.com/maps/api/staticmap?key=AIzaSyATq-O1KcWeOwIlHV5eZ07IXP1nBw1_rAk&size=400x215&markers=icon:https://www.lasikplus.com/assets/images/marker.png" alt="img" class="locations__img">
                 </div>
 
                 <div class="locations__items">
-                  <?php while( $the_query->have_posts() ) : $the_query->the_post(); ?>
+                  <?php while( $the_query->have_posts() ) : $the_query->the_post();
+                    if ( get_field('location_lat') && get_field('location_lng') ) {
+                      $map_src .= "|" . get_field('location_lat') . "," . get_field('location_lng');
+                    } ?>
                     <div class="location-item">
                       <h3 class="location-item__title">LASIK in <?php the_title(); ?></h3>
                       <p class="location-item__text"><?php the_field('location_address'); ?></p>
                       <p class="location-item__text"><?php echo get_field('location_city') . ", " . $state_code . " " . get_field('location_zip'); ?></p>
-                      <p class="location-item__name"><?php the_field('location_doctor'); ?></p>
+                      <?php foreach ( get_field('location_team_members') as $team_member_post_id ) : ?>
+                        <p class="location-item__name"><?php echo get_the_title( $team_member_post_id ); ?></p>
+                      <?php endforeach; ?>
                     </div>
                   <?php endwhile; ?>
+                  <script>
+                    jQuery( function () {
+                      jQuery( "#location-<?php echo $state_code; ?> img" ).attr( "src", "<?php echo $map_src; ?>" )
+                    })
+                  </script>
                 </div>
               <?php endif; ?>
               <?php wp_reset_query(); ?>
             </div>
-          <?php
-          endforeach;
-          ?>
+          <?php endforeach; ?>
         </div>
       </div>
     </div>

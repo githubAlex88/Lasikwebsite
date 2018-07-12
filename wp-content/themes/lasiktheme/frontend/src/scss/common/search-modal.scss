@@ -46,9 +46,11 @@
 	&__result {
 		position: absolute;
 		top: 100%;
-		display: none;
 		width: 100%;
 		margin: 0px;
+		&.active {
+			position: relative;
+		}
 	}
 	&__item {
 		padding: 5px 15px;
