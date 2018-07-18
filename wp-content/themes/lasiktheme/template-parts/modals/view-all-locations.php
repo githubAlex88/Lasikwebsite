@@ -36,17 +36,29 @@ $states = $state_field['choices'];
               'meta_key'		=> 'location_state',
               'meta_value'	=> $state_code
             );
-            $the_query = new WP_Query( $args );
+            $locations_query = new WP_Query( $args );
             $map_src = "http://maps.googleapis.com/maps/api/staticmap?key=AIzaSyATq-O1KcWeOwIlHV5eZ07IXP1nBw1_rAk&size=400x215&markers=icon:https://www.lasikplus.com/assets/images/marker.png";
           ?>
             <div id="location-<?php echo $state_code; ?>" class="location__items-wrapper" style="display: none;">
-              <?php if( $the_query->have_posts() ): ?>
+              <?php if( $locations_query->have_posts() ): ?>
                 <div class="locations__img-wrapper">
                   <img src="http://maps.googleapis.com/maps/api/staticmap?key=AIzaSyATq-O1KcWeOwIlHV5eZ07IXP1nBw1_rAk&size=400x215&markers=icon:https://www.lasikplus.com/assets/images/marker.png" alt="img" class="locations__img">
                 </div>
 
                 <div class="locations__items">
-                  <?php while( $the_query->have_posts() ) : $the_query->the_post();
+                  <?php while( $locations_query->have_posts() ) : $locations_query->the_post();
+                    // Get team members for current vision center
+                    $team_members = get_posts( array(
+                      'post_type' => 'lasik_team_member',
+                      'meta_query' => array(
+                        array(
+                          'key' => 'team_member_vision_centers',
+                          'value' => '"' . get_the_ID() . '"',
+                          'compare' => 'LIKE'
+                        )
+                      )
+                    ));
+                    // Add markers to src for the map image
                     if ( get_field('location_lat') && get_field('location_lng') ) {
                       $map_src .= "|" . get_field('location_lat') . "," . get_field('location_lng');
                     } ?>
@@ -54,8 +66,9 @@ $states = $state_field['choices'];
                       <h3 class="location-item__title">LASIK in <?php the_title(); ?></h3>
                       <p class="location-item__text"><?php the_field('location_address'); ?></p>
                       <p class="location-item__text"><?php echo get_field('location_city') . ", " . $state_code . " " . get_field('location_zip'); ?></p>
-                      <?php foreach ( get_field('location_team_members') as $team_member_post_id ) : ?>
-                        <p class="location-item__name"><?php echo get_the_title( $team_member_post_id ); ?></p>
+                      <?php foreach ( $team_members as $team_member ) :
+                        $job = wp_get_post_terms( $team_member->ID, 'lasik_job', array("fields" => "names") ); ?>
+                        <p class="location-item__name"><?php echo get_the_title( $team_member->ID ) . ", " . ( $job ? $job[0] : "" ) ; ?></p>
                       <?php endforeach; ?>
                     </div>
                   <?php endwhile; ?>

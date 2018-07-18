@@ -98,8 +98,10 @@ if ( ! class_exists( 'Lasik_Locations' ) ) :
         'publicly_queryable' => true,
       );
       register_taxonomy( "lasik_market", "lasik_location", $taxonomy_args );
-      if ( taxonomy_exists( "lasik_market" ) )
+      if ( taxonomy_exists( "lasik_market" ) ) {
+        register_taxonomy_for_object_type( "lasik_market", "post" );
         register_taxonomy_for_object_type( "lasik_market", "lasik_location" );
+      }
 
       // Localization
       load_plugin_textdomain( 'lasik-locations', false, LASIK_PLUGIN_DIR . '/languages' );

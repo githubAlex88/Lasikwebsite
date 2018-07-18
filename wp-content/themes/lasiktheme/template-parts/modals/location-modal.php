@@ -28,23 +28,32 @@
           'numberposts'	=> -1,
           'post_type'		=> 'lasik_location'
         );
-        $the_query = new WP_Query( $args );
-        if( $the_query->have_posts() ):
-          while( $the_query->have_posts() ) :
-            $the_query->the_post();
-            foreach ( get_field('location_team_members') as $team_member_post_id ) :
-        ?>
-            <li class="search-modal__item" style="display: none;"
-                data-state="<?php echo get_field('location_state')['label']; ?>"
-                data-city="<?php the_field('location_city'); ?>"
-                data-zip="<?php the_field('location_zip'); ?>"
-                data-team_member="<?php echo get_the_title( $team_member_post_id ); ?>"
-            >
-              <span>City Match</span>
-              <p><?php the_field('location_city'); ?>, <?php echo get_field('location_state')['label']; ?></p>
-            </li>
-        <?php
-            endforeach;
+        $locations_query = new WP_Query( $args );
+        if( $locations_query->have_posts() ):
+          while( $locations_query->have_posts() ) :
+            $locations_query->the_post();
+            // Get team members for current vision center
+            $team_members = get_posts( array(
+              'post_type' => 'lasik_team_member',
+              'meta_query' => array(
+                array(
+                  'key' => 'team_member_vision_center',
+                  'value' => '"' . get_the_ID() . '"',
+                  'compare' => 'LIKE'
+                )
+              )
+            ));
+            foreach ( $team_members as $team_member ) : ?>
+              <li class="search-modal__item" style="display: none;"
+                  data-state="<?php echo get_field('location_state')['label']; ?>"
+                  data-city="<?php the_field('location_city'); ?>"
+                  data-zip="<?php the_field('location_zip'); ?>"
+                  data-team_member="<?php echo get_the_title( $team_member->ID ); ?>"
+              >
+                <span>City Match</span>
+                <p><?php the_field('location_city'); ?>, <?php echo get_field('location_state')['label']; ?></p>
+              </li>
+            <?php endforeach;
           endwhile;
         endif;
         wp_reset_query();
