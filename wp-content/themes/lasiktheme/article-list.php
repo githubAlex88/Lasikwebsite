@@ -16,7 +16,8 @@ get_template_part("template-parts/articles/top_section"); ?>
 
     // Query articles
     $article_query = new WP_Query( array(
-      'posts_per_page' => 11,
+      'posts_per_page'  => 11,
+      'post_type'       => 'post'
     ));
 
     // Counter to place banner box in second row as the eighth element
@@ -32,7 +33,11 @@ get_template_part("template-parts/articles/top_section"); ?>
           </div>
           <div class="info">
             <div class="category">
-              COST OF LASIK
+              <?php 
+                $categories = get_the_category(); 
+                if( !empty($categories) )
+                  echo esc_html( $categories[0]->name );
+              ?>
             </div>
             <div class="title">
               <a href="" >
