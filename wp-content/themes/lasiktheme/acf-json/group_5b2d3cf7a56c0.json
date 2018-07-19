@@ -3,6 +3,120 @@
   "title": "Homepage Fields",
   "fields": [
     {
+      "key": "field_5b28f06158bbc",
+      "label": "top section",
+      "name": "top_section",
+      "type": "repeater",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+      },
+      "collapsed": "",
+      "min": 0,
+      "max": 0,
+      "layout": "table",
+      "button_label": "",
+      "sub_fields": [
+          {
+              "key": "field_5b31fe8044d89",
+              "label": "Special Offer",
+              "name": "special_offer",
+              "type": "group",
+              "instructions": "",
+              "required": 0,
+              "conditional_logic": 0,
+              "wrapper": {
+                  "width": "",
+                  "class": "",
+                  "id": ""
+              },
+              "layout": "block",
+              "sub_fields": [
+                  {
+                      "key": "field_5b31fe9a44d8a",
+                      "label": "Title",
+                      "name": "title",
+                      "type": "text",
+                      "instructions": "",
+                      "required": 0,
+                      "conditional_logic": 0,
+                      "wrapper": {
+                          "width": "",
+                          "class": "",
+                          "id": ""
+                      },
+                      "default_value": "",
+                      "placeholder": "",
+                      "prepend": "",
+                      "append": "",
+                      "maxlength": ""
+                  },
+                  {
+                      "key": "field_5b31fed544d8b",
+                      "label": "Subtitle",
+                      "name": "subtitle",
+                      "type": "text",
+                      "instructions": "",
+                      "required": 0,
+                      "conditional_logic": 0,
+                      "wrapper": {
+                          "width": "",
+                          "class": "",
+                          "id": ""
+                      },
+                      "default_value": "",
+                      "placeholder": "",
+                      "prepend": "",
+                      "append": "",
+                      "maxlength": ""
+                  },
+                  {
+                      "key": "field_5b32000ad4b82",
+                      "label": "Offer text",
+                      "name": "offer_text",
+                      "type": "text",
+                      "instructions": "",
+                      "required": 0,
+                      "conditional_logic": 0,
+                      "wrapper": {
+                          "width": "",
+                          "class": "",
+                          "id": ""
+                      },
+                      "default_value": "",
+                      "placeholder": "",
+                      "prepend": "",
+                      "append": "",
+                      "maxlength": ""
+                  },
+                  {
+                      "key": "field_5b320013d4b83",
+                      "label": "Schedule Button Text",
+                      "name": "schedule_button_text",
+                      "type": "text",
+                      "instructions": "",
+                      "required": 0,
+                      "conditional_logic": 0,
+                      "wrapper": {
+                          "width": "",
+                          "class": "",
+                          "id": ""
+                      },
+                      "default_value": "",
+                      "placeholder": "",
+                      "prepend": "",
+                      "append": "",
+                      "maxlength": ""
+                  }
+              ]
+          }
+      ]
+    },
+    {
       "key": "field_5b477f12718bf",
       "label": "Doctor Spotlight",
       "name": "doctor_spotlight",
