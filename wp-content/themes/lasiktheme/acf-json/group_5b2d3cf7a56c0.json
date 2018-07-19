@@ -3,25 +3,6 @@
   "title": "Homepage Fields",
   "fields": [
     {
-      "key": "field_5b28f06158bbc",
-      "label": "top section",
-      "name": "top_section",
-      "type": "wysiwyg",
-      "instructions": "",
-      "required": 0,
-      "conditional_logic": 0,
-      "wrapper": {
-        "width": "",
-        "class": "",
-        "id": ""
-      },
-      "default_value": "",
-      "toolbar": "full",
-      "media_upload": 1,
-      "tabs": "all",
-      "delay": 0
-    },
-    {
       "key": "field_5b477f12718bf",
       "label": "Doctor Spotlight",
       "name": "doctor_spotlight",
