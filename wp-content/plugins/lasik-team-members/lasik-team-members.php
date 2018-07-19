@@ -60,7 +60,7 @@ if ( ! class_exists( 'Lasik_Team_Members' ) ) :
           'remove_featured_image' => __( 'Remove Team Member Picture', 'lasik-team-members' ),
         ),
         'description' => __( 'Manage Team Members', 'lasik-team-members' ),
-        'menu_icon' => 'dashicons-admin-site',
+        'menu_icon' => 'dashicons-businessman',
         'supports' => array('title', 'editor', 'thumbnail', ),
         'public' => true,
         'show_ui' => true,
@@ -98,11 +98,11 @@ if ( ! class_exists( 'Lasik_Team_Members' ) ) :
         'show_in_nav_menus' => true,
         'publicly_queryable' => true,
       );
-      register_taxonomy( "lasik_job", "lasik_team_member", $taxonomy_args );
-      if ( taxonomy_exists( "lasik_job" ) )
-        register_taxonomy_for_object_type( "lasik_job", "lasik_team_member" );
-      if ( taxonomy_exists( "lasik_market" ) )
-        register_taxonomy_for_object_type( "lasik_market", "lasik_team_member" );
+      register_taxonomy( 'lasik_job', 'lasik_team_member', $taxonomy_args );
+      if ( taxonomy_exists( 'lasik_job' ) )
+        register_taxonomy_for_object_type( 'lasik_job', 'lasik_team_member' );
+      if ( taxonomy_exists( 'lasik_market' ) )
+        register_taxonomy_for_object_type( 'lasik_market', 'lasik_team_member' );
 
       // Localization
       load_plugin_textdomain( 'lasik-team-members', false, LASIK_TEAM_MEMBERS_PLUGIN_DIR . '/languages' );

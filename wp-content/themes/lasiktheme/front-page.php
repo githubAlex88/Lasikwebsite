@@ -487,6 +487,7 @@ if( $doctor ):
 // Query last 6 articles
 $article_query = new WP_Query( array(
   'posts_per_page' => 6,
+  'post_type'       => 'post'
 ));
 
 if ( $article_query->have_posts() ) :
@@ -502,7 +503,7 @@ if ( $article_query->have_posts() ) :
     </div>
   </div>
   <div class="container">
-    <h2 class="article-feed-title"><?php the_field( "article_feed_title" ); ?></h2>
+    <h2 class="article-feed-title"><?php the_field( 'article_feed_title' ); ?></h2>
   </div>
   <div class="article-feed-main">
     <div class="container">
@@ -544,7 +545,7 @@ if ( $article_query->have_posts() ) :
         <div class="col s12 feed-banner-wrapper">
           <div class="feed-banner">
             <h2 class="feed-banner__title">
-              <?php the_field( "article_feed_banner_content" ); ?>
+              <?php the_field( 'article_feed_banner_content' ); ?>
             </h2>
           </div>
         </div>
@@ -584,5 +585,5 @@ if ( $article_query->have_posts() ) :
 </section>
 <?php endif; ?>
 <!--=== Article feed end ===-->
-<?php echo do_shortcode( "[instagram-feed accesstoken=\"3243597769.927e8a9.5f818e8bdaa14f8fb383607be5758f66\"]" ); ?>
+<?php echo do_shortcode( '[instagram-feed accesstoken="3243597769.927e8a9.5f818e8bdaa14f8fb383607be5758f66"]' ); ?>
 <?php get_footer(); ?>

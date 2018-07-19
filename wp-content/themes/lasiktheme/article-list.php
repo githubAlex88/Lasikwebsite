@@ -29,7 +29,7 @@ get_template_part("template-parts/articles/top_section"); ?>
         $item_count++; ?>
         <div class="item">
           <div class="img">
-            <?php the_post_thumbnail( "thumbnail" ); ?>
+            <?php the_post_thumbnail( 'thumbnail' ); ?>
           </div>
           <div class="info">
             <div class="category">
