@@ -37,7 +37,7 @@
               'post_type' => 'lasik_team_member',
               'meta_query' => array(
                 array(
-                  'key' => 'team_member_vision_center',
+                  'key' => 'team_member_vision_centers',
                   'value' => '"' . get_the_ID() . '"',
                   'compare' => 'LIKE'
                 )
@@ -45,6 +45,7 @@
             ));
             foreach ( $team_members as $team_member ) : ?>
               <li class="search-modal__item" style="display: none;"
+                  data-name="<?php echo the_title(); ?>"
                   data-state="<?php echo get_field( 'location_state' )['label']; ?>"
                   data-city="<?php the_field( 'location_city' ); ?>"
                   data-zip="<?php the_field( 'location_zip' ); ?>"
