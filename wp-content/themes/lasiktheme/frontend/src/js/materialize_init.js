@@ -51,7 +51,7 @@ export default {
       }
     });
     
-    // Change location modal
+    // Change location modal toggle
     $( $('.locations__link.active').attr('href') ).show();
     $('.locations__link').click( function () {
       $('.locations__link').removeClass('active');
@@ -62,26 +62,48 @@ export default {
 
     // View all locations modal
     function searchLocations() {
+      // User input to search
       var searching_term = $("input#location").val().toLowerCase();
+      // Counter for matches
       var matched = 0;
+
+      // Search for occurrences of searching_term in a value received as a parameter
+      function searchTermIn( value ) {
+        if ( value.toString().toLowerCase().indexOf( searching_term ) !== -1 ) {
+          return true;
+        }
+        return false;
+      }
+
+      // Loop through location data
       $(".search-modal__item").each( function () {
         var item = $(this);
+        // Only search if there are less than 5 results
         if ( matched < 5 ) {
           var match_type = "";
+          // Default output "City, State"
           var match_value = item.data("city") + ", " + item.data("state");
+          // If the term exists search for every attribute of the location and get the type and value of the match
           if (searching_term) {
-            if (item.data("state").toString().toLowerCase().indexOf(searching_term) >= 0) {
+            if ( searchTermIn( item.data("state") ) ) {
               match_type = "State";
-            } else if (item.data("city").toString().toLowerCase().indexOf(searching_term) >= 0) {
+            } else if ( searchTermIn( item.data("city") ) ) {
               match_type = "City";
-            } else if (item.data("zip").toString().toLowerCase().indexOf(searching_term) >= 0) {
+            } else if ( searchTermIn( item.data("zip") ) ) {
               match_type = "Zip Code";
               match_value += " " + item.data("zip");
-            } else if (item.data("team_member").toString().toLowerCase().indexOf(searching_term) >= 0) {
-              match_type = "Team Member";
-              match_value = item.data("team_member") + ". " + match_value;
+            } else {
+              // For team members loop through the json array
+              $.each( item.data("team_member"), function ( index, value ) {
+                if ( searchTermIn( value ) ) {
+                  match_type = "Team Member";
+                  match_value = value + ". " + match_value;
+                  return false;
+                }
+              });
             }
           }
+          // If there is a match show the vision center, else hide it
           if ( match_type ) {
             matched++;
             item.show();
@@ -94,6 +116,7 @@ export default {
           item.hide();
         }
       });
+      // If there are matches toggle class active to style the containr so results are properly displayed
       var results_wrapper = $(".search-modal__result");
       if ( matched > 0 ) {
         results_wrapper.addClass("active");
@@ -101,6 +124,7 @@ export default {
         results_wrapper.removeClass("active");
       }
     }
+    // Add the event for input field and button
     $(".search-modal__input").keyup( searchLocations );
     $(".search-modal__submit").click( searchLocations );
 	}

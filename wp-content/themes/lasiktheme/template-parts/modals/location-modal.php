@@ -43,19 +43,21 @@
                 )
               )
             ));
-            foreach ( $team_members as $team_member ) : ?>
-              <li class="search-modal__item" style="display: none;"
-                  data-name="<?php echo the_title(); ?>"
-                  data-state="<?php echo get_field( 'location_state' )['label']; ?>"
-                  data-city="<?php the_field( 'location_city' ); ?>"
-                  data-zip="<?php the_field( 'location_zip' ); ?>"
-                  data-team_member="<?php echo get_the_title( $team_member->ID ); ?>"
-              >
-                <span>City Match</span>
-                <p><?php the_field( 'location_city' ); ?>, <?php echo get_field( 'location_state' )['label']; ?></p>
-              </li>
-            <?php endforeach;
-          endwhile;
+            $team_members_array = array();
+            foreach ( $team_members as $team_member ) :
+              $team_members_array[] = '"' . strtolower( get_the_title( $team_member->ID ) ) . '"';
+            endforeach; ?>
+            <li class="search-modal__item" style="display: none;"
+                data-name="<?php echo the_title(); ?>"
+                data-state="<?php echo get_field( 'location_state' )['label']; ?>"
+                data-city="<?php the_field( 'location_city' ); ?>"
+                data-zip="<?php the_field( 'location_zip' ); ?>"
+                data-team_member='[<?php echo implode(",", $team_members_array); ?>]'
+            >
+              <span>City Match</span>
+              <p><?php the_field( 'location_city' ); ?>, <?php echo get_field( 'location_state' )['label']; ?></p>
+            </li>
+          <?php endwhile;
         endif;
         wp_reset_query();
         ?>
