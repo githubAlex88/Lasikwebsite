@@ -331,7 +331,7 @@ get_header(); ?>
 $doctor = get_field("doctor_spotlight");
 
 if( $doctor ):
-  $vision_center = get_field( "team_member_vision_center", $doctor->ID )[0];
+  $vision_center = get_field( "team_member_vision_centers", $doctor->ID )[0];
   $job = wp_get_post_terms( $doctor->ID, "lasik_job", array("fields" => "names") )[0]; ?>
   <section class="spotlight">
     <div class="spotlight__wrapper">
