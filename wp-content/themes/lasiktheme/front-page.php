@@ -356,7 +356,7 @@ if( $doctor ):
                 “<?php the_field( "team_member_quote", $doctor->ID ); ?>”
               </div>
 
-              <img src="<?php the_field( "team_member_picture", $doctor->ID ); ?>" alt="<?php get_the_title( $doctor->ID ); ?>, <?php echo $job; ?>">
+              <img src="<?php the_field( "team_member_picture", $doctor->ID ); ?>" alt="<?php echo get_the_title( $doctor->ID ); ?>, <?php echo $job; ?>">
             </div>
             <!--=== Spotlight main info end ===-->
           </div>
@@ -371,8 +371,8 @@ if( $doctor ):
                       <div class="row">
                         <div class="col s4 m12">
                           <div class="spotlight__profile-photo">
-                            <img class="hide-on-med-and-down" src="<?php echo get_the_post_thumbnail_url( $doctor->ID ); ?>" alt="<?php get_the_title( $doctor->ID ); ?>, <?php echo $job; ?>">
-                            <img class="hide-on-large-only" src="<?php echo get_the_post_thumbnail_url( $doctor->ID ); ?>" alt="<?php get_the_title( $doctor->ID ); ?>, <?php echo $job; ?>">
+                            <img class="hide-on-med-and-down" src="<?php echo get_the_post_thumbnail_url( $doctor->ID ); ?>" alt="<?php echo get_the_title( $doctor->ID ); ?>, <?php echo $job; ?>">
+                            <img class="hide-on-large-only" src="<?php echo get_the_post_thumbnail_url( $doctor->ID ); ?>" alt="<?php echo get_the_title( $doctor->ID ); ?>, <?php echo $job; ?>">
                           </div>
                         </div>
 
