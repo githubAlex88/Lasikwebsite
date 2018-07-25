@@ -10,7 +10,10 @@
         </noscript>
       </picture>
     </a>
-    <a href="<?php the_permalink(); ?>" class="article-item__category article-item__category--small hide-on-small-only"><?php the_title(); ?></a>
+    <?php $categories = get_the_category();
+    if( !empty($categories) ) : ?>
+      <a href="<?php echo get_category_link( $categories[0]->term_id ); ?>" class="article-item__category article-item__category--small hide-on-small-only"><?php echo esc_html( $categories[0]->name ); ?></a>
+    <?php endif; ?>
     <div class="article-item__date">
       <div class="article-item__day"><?php the_time('d'); ?></div>
       <div class="article-item__month"><?php the_time('M'); ?></div>
