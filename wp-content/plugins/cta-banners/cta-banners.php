@@ -72,6 +72,23 @@ class CtaBanners {
         add_action( 'add_meta_boxes', array( $this, 'add_meta_boxes' ) );
         add_action( 'admin_footer', array( $this, 'media_fields' ) );
         add_action( 'save_post', array( $this, 'save_fields' ) );
+
+        add_shortcode( 'cta_banner', array( $this, 'cta_banner' ) );
+    }
+
+    public function cta_banner()
+    {
+        $args = array(
+            'post_type'         => 'ctabanner',
+            'orderby'           => 'rand',
+            'posts_per_page'    => 1
+        );
+        $query_banners = new WP_Query( $args );
+        while ( $query_banners->have_posts() ) {
+            $query_banners->the_post();
+            get_template_part( 'template-parts/post/banner', false );
+        }
+        wp_reset_postdata();
     }
 
     public function create_post_type()
