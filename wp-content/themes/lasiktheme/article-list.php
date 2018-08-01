@@ -40,7 +40,7 @@ get_template_part("template-parts/articles/top_section"); ?>
               ?>
             </div>
             <div class="title">
-              <a href="" >
+              <a href="<?php the_permalink(); ?>" >
                 <?php the_title(); ?>
               </a>
             </div>
