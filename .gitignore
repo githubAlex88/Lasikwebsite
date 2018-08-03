@@ -6,6 +6,7 @@
 node_modules/
 
 wp-content/themes/lasiktheme/frontend/public/
+wp-content/themes/lasiktheme/frontend/src/images/
 
 wp-content/*
 !wp-content/mu-plugins/

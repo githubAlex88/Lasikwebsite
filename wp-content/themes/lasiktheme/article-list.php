@@ -40,7 +40,7 @@ get_template_part("template-parts/articles/top_section"); ?>
               ?>
             </div>
             <div class="title">
-              <a href="" >
+              <a href="<?php the_permalink(); ?>" >
                 <?php the_title(); ?>
               </a>
             </div>
@@ -49,8 +49,9 @@ get_template_part("template-parts/articles/top_section"); ?>
             </div>
           </div>
         </div>
-        <?php if ( $item_count == 7 ) : ?>
+        <?php if ( $item_count == 2 ) : ?>
           <!-- Banner code/shortcode goes here -->
+          <?php echo do_shortcode( '[cta_banner]' ); ?>
         <?php endif; ?>
       <?php endwhile; ?>
 
