@@ -265,7 +265,7 @@
       <button type="button" class="quiz__button quiz-next quiz-results-hide button button-secondary hide">
         <i class="far fa-chevron-right"></i>
         Next step
-      </abutton>
+      </button>
     </div>
 
   </div>

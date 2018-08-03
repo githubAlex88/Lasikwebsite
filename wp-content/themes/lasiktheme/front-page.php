@@ -330,157 +330,13 @@ get_header(); ?>
 <?php
 $doctor = get_field("doctor_spotlight");
 
-if( $doctor ):
-  $vision_center = get_field( "team_member_vision_centers", $doctor->ID )[0];
-  $job = wp_get_post_terms( $doctor->ID, "lasik_job", array("fields" => "names") )[0]; ?>
-  <section class="spotlight">
-    <div class="spotlight__wrapper">
-      <div class="container">
-        <div class="row align-center-xl justify-center-xl">
-          <div class=" col s12 m6 l5 xl6">
-            <!--=== Spotlight main info start ===-->
-            <div class="spotlight__main-info">
-
-              <div class="spotlight__header">
-                <div class="spotlight__personal">
-                  <h2 class="spotlight__name"><?php echo get_the_title( $doctor->ID ); ?>, <?php echo $job; ?></h2>
-                  <p class="spotlight__place"><?php the_field( "location_city", $vision_center ); ?>, <?php the_field( "location_state", $vision_center ); ?> Vision Center</p>
-                </div>
-                <div class="spotlight__work-experience">
-                  <p><?php the_field( "team_member_experience", $doctor->ID ); ?> Years of Experience</p>
-                  <p>Over <?php echo number_format( get_field( "team_member_procedures", $doctor->ID ) ); ?> LASIK Procedures Performed</p>
-                </div>
-              </div>
-
-              <div class="spotlight__about hide-on-med-and-up">
-                “<?php the_field( "team_member_quote", $doctor->ID ); ?>”
-              </div>
-
-              <img src="<?php the_field( "team_member_picture", $doctor->ID ); ?>" alt="<?php echo get_the_title( $doctor->ID ); ?>, <?php echo $job; ?>">
-            </div>
-            <!--=== Spotlight main info end ===-->
-          </div>
-          <div class="col s12 m6 l7 xl6">
-            <!--=== Spotlight review start ===-->
-            <div class="spotlight__review">
-              <div class="row align-end-l">
-
-                <div class="col s12 l4 spotlight-with-photo">
-                  <div class="row column-reverse-l">
-                    <div class="col s12 m5 l12">
-                      <div class="row">
-                        <div class="col s4 m12">
-                          <div class="spotlight__profile-photo">
-                            <img class="hide-on-med-and-down" src="<?php echo get_the_post_thumbnail_url( $doctor->ID ); ?>" alt="<?php echo get_the_title( $doctor->ID ); ?>, <?php echo $job; ?>">
-                            <img class="hide-on-large-only" src="<?php echo get_the_post_thumbnail_url( $doctor->ID ); ?>" alt="<?php echo get_the_title( $doctor->ID ); ?>, <?php echo $job; ?>">
-                          </div>
-                        </div>
-
-                        <div class="col s8 m12 hide-on-large-only">
-                          <a href="#" class="reviews-link" target="_blank" title="View the google reviews">
-                            <!--=include ../common/star_bar.html -->
-                            <div class="review-amount">
-                              129 - Reviews on Google
-                            </div>
-                            <!--=include ../common/google_logo.html -->
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col s12 m7 l12 hide-on-small-only">
-                      <div class="spotlight__about">
-                        “<?php the_field( "team_member_quote", $doctor->ID ); ?>”
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div class=" col s12 l8 spotlight-with-review">
-                  <div class="col l12 hide-on-med-and-down">
-                    <a href="#" class="reviews-link" target="_blank" title="View the google reviews">
-                      <!--=include ../common/star_bar.html -->
-                      <div class="review-amount">
-                        129 - Reviews on Google
-                      </div>
-                      <!--=include ../common/google_logo.html -->
-                    </a>
-                  </div>
-                  <div class="review-title">
-                    <h3 class="review-own">A REVIEW FROM OUR PATIENT,  LORI S.</h3>
-                    <div class="review-hint">
-                      This review was unsolicited and submitted recently by Lori S. directly to Google for our Portland Vision Center.
-                    </div>
-                  </div>
-                  <div class="review-body">
-                    Absolutely wonderful! Best experience from beginning to end. Wonderful, knowledgeable staff who were very thorough in explaining all the steps from what was to happen in the initial consultation, through the procedure and the aftercare as well as what to expect from my vision all the way through the first year....
-                  </div>
-                  <a href="#" class="btn-simple btn-simple--icon btn-simple--orange btn-simple--full-width">
-                    <i class="fab fa-wpexplorer btn-simple__icon"></i>
-                    <span class="btn-simple__text">
-                      Explore Our Vision Centers
-                    </span>
-                  </a>
-                </div>
-
-              </div>
-            </div>
-            <!--=== Spotlight review end ===-->
-          </div>
-        </div>
-      <?php wp_reset_postdata(); ?>
-      </div>
-    </div>
-  </section>
-<?php endif; ?>
+if( $doctor ) {
+  include(locate_template('template-parts/doctor-spotlight.php', false, false));
+}
+?>
 <!--=== Spotlight end ===-->
 <!--=== Downloads start ===-->
-<section class="downloads-section">
-  <div class="container">
-
-    <div class="download-item">
-      <div class="download-item__img lr-direction">
-        <div class="image-wrapper">
-          <img src="<?php the_field( "candidacy_image" ); ?>" alt="Candidacy Quiz">
-        </div>
-      </div>
-      <div class="download-item__content">
-        <h2>CANDIDACY QUIZ</h2>
-        <h3><?php the_field( "candidacy_title" ); ?></h3>
-        <p><?php the_field( "candidacy_text" ); ?></p>
-        <a href="#candidacy-quiz" class="btn-simple btn-simple--icon btn-simple--orange btn-simple--full-width modal-trigger">
-          <i class="far fa-question-circle btn-simple__icon" aria-hidden="true"></i>
-          <span class="btn-simple__text"><?php the_field( "candidacy_button_text" ); ?></span>
-        </a>
-      </div>
-    </div>
-
-    <div class="download-item download-item__reverse">
-      <div class="download-item__img rl-direction">
-        <div class="image-wrapper">
-          <img src="<?php the_field( "download_information_image" ); ?>" alt="Download Information">
-        </div>
-      </div>
-      <div class="download-item__content">
-        <h2>FREE DOWNLOAD</h2>
-        <h3><?php the_field( "download_information_title" ); ?></h3>
-        <p><?php the_field( "download_information_text" ); ?></p>
-        <a href="#information-kit" class="btn-simple btn-simple--icon btn-simple--orange btn-simple--full-width modal-trigger">
-          <i class="far fa-arrow-to-bottom btn-simple__icon" aria-hidden="true"></i>
-          <span class="btn-simple__text"><?php the_field( "download_information_button_text" ); ?></span>
-        </a>
-      </div>
-    </div>
-
-  </div>
-
-  <div class="background-decoration bottom-top" aria-hidden="true">
-    <span class="brand-name"><span>Lasik</span><span>Plus</span></span>
-  </div>
-  <div class="background-decoration top-bottom" aria-hidden="true">
-    <span class="brand-name"><span>Lasik</span>Plus</span>
-  </div>
-
-</section>
+<?php include( locate_template( 'template-parts/downloads.php', false, false ) ); ?>
 <!--=== Downloads end ===-->
 <!--=== Article feed start ===-->
 <?php
@@ -492,98 +348,18 @@ $article_query = new WP_Query( array(
 
 if ( $article_query->have_posts() ) :
   $articles = $article_query->posts;
-?>
-<section class="article-feed-section">
-  <div class="article-feed-presentation" aria-hidden="true">
-    <div class="upper-layer">
-      <div class="layer-presentation"></div>
-    </div>
-    <div class="bottom-layer">
-      <div class="layer-presentation"></div>
-    </div>
-  </div>
-  <div class="container">
-    <h2 class="article-feed-title"><?php the_field( 'article_feed_title' ); ?></h2>
-  </div>
-  <div class="article-feed-main">
-    <div class="container">
-      <div class="row article-feed__content">
-        <div class="col s12 m8">
-          <?php
-          $post = $articles[0];
-          setup_postdata( $post );
-          include( locate_template( 'template-parts/articles/article_middle.php', false, false ) );
-          wp_reset_postdata();
-          ?>
-          <div class="row">
-            <?php if ( $articles[1] ) : ?>
-            <div class="col s12 m6">
-              <?php
-              $post = $articles[1];
-              setup_postdata( $post );
-              include( locate_template( 'template-parts/articles/article_small.php', false, false ) );
-              wp_reset_postdata();
-              ?>
-            </div>
-            <?php endif; ?>
-            <?php if ( $articles[2] ) : ?>
-              <div class="col s12 m6">
-                <?php
-                $post = $articles[2];
-                setup_postdata( $post );
-                include( locate_template( 'template-parts/articles/article_small.php', false, false ) );
-                wp_reset_postdata();
-                ?>
-              </div>
-            <?php endif; ?>
-          </div>
-        </div>
 
-        <div class="col s12 m4 social-reviews-wrapper">
-          <?php get_template_part( 'template-parts/reviews/social_reviews', 'widgets' ) ?>
-        </div>
-        <div class="col s12 feed-banner-wrapper">
-          <div class="feed-banner">
-            <h2 class="feed-banner__title">
-              <?php the_field( 'article_feed_banner_content' ); ?>
-            </h2>
-          </div>
-        </div>
-        <?php if ( $articles[3] ) : ?>
-        <div class="col s12">
-          <?php
-          $post = $articles[3];
-          setup_postdata( $post );
-          include( locate_template( 'template-parts/articles/article_large.php', false, false ) );
-          wp_reset_postdata();
-          ?>
-        </div>
-        <?php endif; ?>
-        <?php if ( $articles[4] ) : ?>
-          <div class="col s12 m6">
-            <?php
-            $post = $articles[4];
-            setup_postdata( $post );
-            include( locate_template( 'template-parts/articles/article_horizontal.php', false, false ) );
-            wp_reset_postdata();
-            ?>
-          </div>
-        <?php endif; ?>
-        <?php if ( $articles[5] ) : ?>
-          <div class="col s12 m6">
-            <?php
-            $post = $articles[5];
-            setup_postdata( $post );
-            include( locate_template( 'template-parts/articles/article_horizontal.php', false, false ) );
-            wp_reset_postdata();
-            ?>
-          </div>
-        <?php endif; ?>
-      </div>
-    </div>
-  </div>
-</section>
+  if ( $articles ) {
+    include( locate_template( 'template-parts/articles.php', false, false ) );
+  }
+?>
 <?php endif; ?>
 <!--=== Article feed end ===-->
-<?php echo do_shortcode( '[instagram-feed accesstoken="3243597769.927e8a9.5f818e8bdaa14f8fb383607be5758f66"]' ); ?>
+<!--=== Instagram feed start ===-->
+<?php
+  $instagram_shortcode = '[grace id="1"]';
+
+  include( locate_template( 'template-parts/instagram-feed.php', false, false ) );
+?>
+<!--=== Instagram feed end ===-->
 <?php get_footer(); ?>
