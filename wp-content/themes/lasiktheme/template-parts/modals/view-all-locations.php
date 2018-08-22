@@ -32,8 +32,8 @@ $states = $state_field['choices'];
             // Get vision centers for the state
             $args = array(
               'numberposts'	=> -1,
-              'post_type'		=> 'lasik_location',
-              'meta_key'		=> 'location_state',
+              'post_type'	=> 'lasik_location',
+              'meta_key'	=> 'location_state',
               'meta_value'	=> $state_code
             );
             $locations_query = new WP_Query( $args );

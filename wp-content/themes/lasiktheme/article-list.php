@@ -8,7 +8,7 @@
 
 get_header();
 
-get_template_part("template-parts/articles/top_section"); ?>
+get_template_part("template-parts/articles/top-section"); ?>
 
 <section class="wrap-article-list">
   <div class="article-list container">

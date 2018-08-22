@@ -131,24 +131,9 @@ get_header(); ?>
   <!--=== Special Offer start ===-->
   <?php  if( have_rows( 'top_section' ) ): ?>
      <?php while( have_rows( 'top_section' ) ) : the_row(); ?>
-        <?php $special_offer_row = get_sub_field( 'special_offer' ); ?>    
-      <div class="special-offer">
-        <div class="container align-center text-white">          
-          <h2 class="special-offer__title"><?php echo $special_offer_row[ 'title' ];?></h2>
-          <h3 class=special-offer__subtitle>
-            <?php echo $special_offer_row[ 'subtitle' ]; ?>
-          </h3>
-          <p class="special-offer__text">
-            <?php echo $special_offer_row[ 'offer_text' ]; ?>
-          </p>
-          <button class="btn-simple btn-simple--icon btn-simple--dark-green btn-simple--big special-offer__button waves-effect waves-light" type="button">
-            <i class="far fa-calendar-alt btn-simple__icon"></i>
-            <span class="btn-simple__text"><?php echo $special_offer_row[ 'schedule_button_text' ]; ?></span>
-          </button>
-
+        <?php $special_offer = get_sub_field( 'special_offer' ); ?>
+        <?php if ( $special_offer ) { include( locate_template( 'template-parts/special-offer.php', false, false ) ); } ?>
       <?php endwhile; ?>
-        </div>
-      </div>
   <?php endif; ?>
   <!--=== Special Offer end ===-->
 </section>
@@ -331,7 +316,7 @@ get_header(); ?>
 $doctor = get_field("doctor_spotlight");
 
 if( $doctor ) {
-  include(locate_template('template-parts/doctor-spotlight.php', false, false));
+  include( locate_template('template-parts/doctor-spotlight.php', false, false));
 }
 ?>
 <!--=== Spotlight end ===-->

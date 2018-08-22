@@ -17,7 +17,7 @@
           <?php
           $post = $articles[0];
           setup_postdata( $post );
-          include( locate_template( 'template-parts/articles/article_middle.php', false, false ) );
+          include( locate_template( 'template-parts/articles/article-middle.php', false, false ) );
           wp_reset_postdata();
           ?>
           <div class="row">
@@ -26,7 +26,7 @@
                 <?php
                 $post = $articles[1];
                 setup_postdata( $post );
-                include( locate_template( 'template-parts/articles/article_small.php', false, false ) );
+                include( locate_template( 'template-parts/articles/article-small.php', false, false ) );
                 wp_reset_postdata();
                 ?>
               </div>
@@ -36,7 +36,7 @@
                 <?php
                 $post = $articles[2];
                 setup_postdata( $post );
-                include( locate_template( 'template-parts/articles/article_small.php', false, false ) );
+                include( locate_template( 'template-parts/articles/article-small.php', false, false ) );
                 wp_reset_postdata();
                 ?>
               </div>
@@ -59,7 +59,7 @@
             <?php
             $post = $articles[3];
             setup_postdata( $post );
-            include( locate_template( 'template-parts/articles/article_large.php', false, false ) );
+            include( locate_template( 'template-parts/articles/article-large.php', false, false ) );
             wp_reset_postdata();
             ?>
           </div>
@@ -69,7 +69,7 @@
             <?php
             $post = $articles[4];
             setup_postdata( $post );
-            include( locate_template( 'template-parts/articles/article_horizontal.php', false, false ) );
+            include( locate_template( 'template-parts/articles/article-horizontal.php', false, false ) );
             wp_reset_postdata();
             ?>
           </div>
@@ -79,7 +79,7 @@
             <?php
             $post = $articles[5];
             setup_postdata( $post );
-            include( locate_template( 'template-parts/articles/article_horizontal.php', false, false ) );
+            include( locate_template( 'template-parts/articles/article-horizontal.php', false, false ) );
             wp_reset_postdata();
             ?>
           </div>
