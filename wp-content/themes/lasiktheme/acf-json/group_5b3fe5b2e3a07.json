@@ -22,6 +22,25 @@
             "new_lines": ""
         },
         {
+            "key": "field_5b6a059c6a0c8",
+            "label": "Center Code",
+            "name": "location_center_cide",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
             "key": "field_5b400e4580cb3",
             "label": "City",
             "name": "location_city",
@@ -305,5 +324,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1531409658
+    "modified": 1533674947
 }
