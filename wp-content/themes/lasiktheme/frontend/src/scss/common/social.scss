@@ -1,6 +1,18 @@
 .social {
 	display: flex;
 	align-items: center;
+	&.social--fixed-sm {
+		position: static;
+		transform: translate(0);
+		background-color: $white;
+		.social__title {
+			color: $brand-primary;
+		}
+		.social__link {
+			color: $brand-primary;
+		}
+	}
+	&--between,
 	&--between-xs {
 		justify-content: space-between;
 	}
@@ -18,6 +30,14 @@
 		}
 		.social__item {
 			margin: 0px 10px;
+		}
+	}
+	&__content {
+		padding: 10px 0px;
+		&--between {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
 		}
 	}
 	&__title {
@@ -53,6 +73,18 @@
 
 @media screen and (min-width: $screen-sm) {
 	.social {
+		&.social--fixed-sm {
+			position: fixed;
+			z-index: 10;
+			transform: translateY(100%);
+			background-color: $brand-primary;
+			.social__title {
+				color: $white;
+			}
+			.social__link {
+				color: $white;
+			}
+		}
 		&--between-xs {
 			justify-content: flex-start;
 		}
@@ -63,6 +95,9 @@
 			.social__item {
 				margin: 0px 0px 25px;
 			}
+		}
+		&__content {
+			padding: 5px 0px 0px 0px;
 		}
 		&__link {
 			font-size: 18px;

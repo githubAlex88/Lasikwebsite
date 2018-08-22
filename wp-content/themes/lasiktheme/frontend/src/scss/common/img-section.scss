@@ -1,0 +1,11 @@
+.img-section {
+	padding: 10px 0px;
+	&--blue {
+		background-color: $brand-light;
+	}
+	&__img {
+		max-width: 100%;
+		display: block;
+		margin: 0px auto;
+	}
+}

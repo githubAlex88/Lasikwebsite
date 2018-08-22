@@ -61,16 +61,6 @@
 			font-size: 18px;
 			line-height: 10px;
 		}
-		.current-menu-item {
-			.menu__link {
-				color: $brand-secondary;
-				&:after {
-					bottom: -3px;
-					height: 5px;
-					background-color: $brand-secondary;
-				}
-			}
-		}
 	}
 	nav {
 		a {

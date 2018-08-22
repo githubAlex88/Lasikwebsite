@@ -36,6 +36,8 @@ export default {
 
     });
 
+    $('select').formSelect();
+
     $('[data-open-submenu]').on('click', function(e) {
       let submenu = $($(this).data('open-submenu'));
       

@@ -1,0 +1,40 @@
+.partner-item {
+	max-width: 230px;
+	width: 100%;
+	margin-bottom: 30px;
+	&:last-child {
+		margin-bottom: 0px;
+	}
+	&__img {
+		display: block;
+	}
+	&__content {
+		text-align: center;
+	}
+	&__title {
+		color: $brand-dark;
+		font-size: 16px;
+		line-height: 32px;
+	}
+}
+
+@media screen and (min-width: $screen-x) {
+	.partner-item {
+		margin-bottom: 45px;
+	}
+}
+
+@media screen and (min-width: $screen-sm) {
+	.partner-item {
+		margin: 0px 20px 15px;
+		&__img {
+			max-width: 230px;
+			min-height: 230px;
+			display: flex;
+			align-items: center;
+		}
+		&__content {
+			text-align: center;
+		}
+	}
+}
