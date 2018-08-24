@@ -6,7 +6,7 @@
         setup_postdata($post);
         $categories = get_the_category(); ?>
         <div class="question">
-          <span class="question__category"><?php echo $categories[0]->cat_name; ?></span>
+          <span class="question__category"><?php echo !empty( $categories ) ? esc_html( $categories[0]->name ) : ''; ?></span>
           <a href="#faq-modal-<?php echo $post->post_name; ?>" class="question__title modal-trigger">
             <?php the_title(); ?>
           </a>

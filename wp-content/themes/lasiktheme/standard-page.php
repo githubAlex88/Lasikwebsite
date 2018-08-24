@@ -48,4 +48,8 @@ endif;
 <?php get_template_part( 'template-parts/page/more-section', 'widgets' ); ?>
 <!--=== More Section end ===-->
 
+<!--=== Articles Section start ===-->
+<?php get_template_part( 'template-parts/page/articles-section', 'widgets' ); ?>
+<!--=== Articles Section end ===-->
+
 <?php get_footer(); ?>
