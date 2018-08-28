@@ -342,9 +342,11 @@ if ( $article_query->have_posts() ) :
 <!--=== Article feed end ===-->
 <!--=== Instagram feed start ===-->
 <?php
-  $instagram_shortcode = '[grace id="1"]';
+if ( get_field( 'instagram_access_token' ) ) {
+  $instagram_access_token = get_field( 'instagram_access_token' );
 
   include( locate_template( 'template-parts/instagram-feed.php', false, false ) );
+}
 ?>
 <!--=== Instagram feed end ===-->
 <?php get_footer(); ?>

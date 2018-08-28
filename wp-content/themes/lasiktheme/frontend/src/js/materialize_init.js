@@ -36,7 +36,29 @@ export default {
 
     });
 
+    // Init selects
     $('select').formSelect();
+
+    // Init carousel
+    $('.carousel').carousel({
+      fullWidth: true,
+      indicators: false
+    });
+
+    // move next carousel
+    $('.carousel-next').click(function(e){
+      e.preventDefault();
+      e.stopPropagation();
+      $('.carousel').carousel('next');
+    });
+
+    // move prev carousel
+    $('.carousel-prev').click(function(e){
+      e.preventDefault();
+      e.stopPropagation();
+      $('.carousel').carousel('prev');
+    });
+
 
     $('[data-open-submenu]').on('click', function(e) {
       let submenu = $($(this).data('open-submenu'));

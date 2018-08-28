@@ -5,7 +5,6 @@
   .item {
     max-width: 400px;
     width: 100%;
-    margin: 0px auto 2px;
     img {
       width: 100%;
     }
@@ -55,16 +54,30 @@
   .feed-instagram {
     margin: 0px 15px 30px;
     padding: 20px 20px 0;
-    background: url('../assets/images/bg-feed-instagram.jpg') no-repeat;
+    background: url('../lasiktheme/assets/images/bg-feed-instagram.jpg') no-repeat;
     background-size: cover;
     background-position: center center;
+    &__wrapper {
+      width: 100%;
+      position: relative;
+    }
+    &__indicators {
+      position:absolute;
+      top: calc(50% - 12px);
+      width: 101.5%;
+      margin-left: -0.8%;
+    }
     &__list {
+      max-height: 330px;
       display: flex;
       flex-wrap: wrap;
       flex-direction: row;
       justify-content: space-between;
+      margin-left: 2.5%;
+      width: 95%!important;
       .item {
-        width: calc(1/3*100% - (1 - 1/3)*20px)
+        width: calc(1/3*100%);
+        padding: 0 5px;
       }
     }
     .item {
