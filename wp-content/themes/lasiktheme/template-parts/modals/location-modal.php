@@ -7,7 +7,7 @@
   <!--=== Search Form start ===-->
   <div class="search-modal autocomplite">
     <div class="search-modal__content">
-      <form action="<?php echo admin_url( 'admin-post.php' ); ?>" method="post" class="search-modal__form" autocomplete="off">
+      <form action="<?php echo admin_url( 'admin-post.php' ); ?>" method="post" class="search-modal__form change-location" autocomplete="off">
         <?php wp_nonce_field('location-nonce', 'location_form_nonce'); ?>
         <div class="input-field">
           <input 

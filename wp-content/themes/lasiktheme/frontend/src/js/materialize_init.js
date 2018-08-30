@@ -155,7 +155,15 @@ export default {
     $(".search-modal__input").keyup( searchLocations );
     $(".search-modal__submit").click( searchLocations );
 
+    $('.current-postiton__button').click(function(e) {
+      e.preventDefault();
+      // Reset data to visitor's location
+      $('#locationData').val("");
+      $('.search-modal__form.change-location').trigger('submit');
+    });
+
     $('#locations .search-modal__item').click(function(e) {
+      console.log('test111');
       var that = $(this);
       var data = {
         id:           that.data('id'),
@@ -171,7 +179,7 @@ export default {
       $('#location').val(that.find('p').text()).focus();
       $('#locationData').val(JSON.stringify(data));
     });
-    
+
     $('#vision-center').on('input', function(e) {
       let items = $('.search-item');
       let inputValue = $(this).val().toLowerCase();

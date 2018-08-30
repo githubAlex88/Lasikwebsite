@@ -73,6 +73,9 @@
 		display: none;
 		width: 100%;
 		margin: 0px;
+		&.active {
+			display: block;
+		}
 	}
 	&__results {
 		padding-top: 30px;
