@@ -127,5 +127,47 @@ export default {
     // Add the event for input field and button
     $(".search-modal__input").keyup( searchLocations );
     $(".search-modal__submit").click( searchLocations );
+
+    $('.current-postiton__button').click(function(e) {
+      e.preventDefault();
+      // Reset data to visitor's location
+      $('#locationData').val("");
+      $('.search-modal__form').trigger('submit');
+    });
+
+    $('#locations .search-modal__item').click(function(e) {
+      var that = $(this);
+      var data = {
+        id:           that.data('id'),
+        long:         that.data('long'),
+        lat:          that.data('lat'),
+        name:         that.data('name'),
+        state:        that.data('state'),
+        stateShort:   that.data('state_short'),
+        city:         that.data('city'),
+        zip:          that.data('zip'),
+        team_member:  that.data('team_member')
+      };
+      $('#location').val(that.find('p').text()).focus();
+      $('#locationData').val(JSON.stringify(data));
+    });
+
+    $('#vision-center').on('input', function(e) {
+      let items = $('.search-item');
+      let inputValue = $(this).val().toLowerCase();
+      items.each(function() {
+        let item = $(this);
+        $(this).find('.search-field').each(function() {
+          console.log($(this).text());
+          console.log($(this).text().toLowerCase().startsWith(inputValue));
+          if($(this).text().toLowerCase().startsWith(inputValue)) {
+            item.show();
+            return false;
+          } else {
+            item.hide();
+          }
+        });
+      });
+    });
 	}
 }

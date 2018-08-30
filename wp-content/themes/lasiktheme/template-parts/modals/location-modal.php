@@ -4,20 +4,22 @@
   <button type="button" class="modal__close modal-close">
     <i class="far fa-times"></i>
   </button>
-
   <!--=== Search Form start ===-->
   <div class="search-modal autocomplite">
     <div class="search-modal__content">
-      <form action="" class="search-modal__form">
+      <form action="<?php echo admin_url( 'admin-post.php' ); ?>" method="post" class="search-modal__form" autocomplete="off">
+        <?php wp_nonce_field('location-nonce', 'location_form_nonce'); ?>
         <div class="input-field">
           <input 
             type="text" 
             id="location"
             data-target="#locations"
             class="search-modal__input browser-default">
+            <input type="hidden" name="action" value="process_form">
+            <input id="locationData" type="hidden" name="location_data" value="">
             <label for="location" class="search-modal__label">Enter a Zip Code, City, State, or Doctor Name</label>
         </div>
-        <button type="button" class="search-modal__submit">
+        <button class="search-modal__submit" type="submit">
           <i class="far fa-search search-modal__icon"></i>
         </button>
       </form>
@@ -48,8 +50,12 @@
               $team_members_array[] = '"' . strtolower( get_the_title( $team_member->ID ) ) . '"';
             endforeach; ?>
             <li class="search-modal__item" style="display: none;"
+                data-id="<?php echo $post->ID;?>"
+                data-long="<?php echo the_field('location_lng');?>"
+                data-lat="<?php echo the_field('location_lat');?>"
                 data-name="<?php echo the_title(); ?>"
                 data-state="<?php echo get_field( 'location_state' )['label']; ?>"
+                data-state_short="<?php echo get_field( 'location_state' )['value']; ?>"
                 data-city="<?php the_field( 'location_city' ); ?>"
                 data-zip="<?php the_field( 'location_zip' ); ?>"
                 data-team_member='[<?php echo implode(",", $team_members_array); ?>]'

@@ -1,3 +1,4 @@
+<?php global $geolocator; ?>
 <!--=== Header start ===-->
 <header class="header">
   <!--=== Header Top start ===-->
@@ -50,7 +51,10 @@
           <li class="header-top__item header-top__item--no-margin">
             <a class="header-top__link" href="#">
               <i class="far fa-map-marker header-top__icon"></i>
-              <span class="text-gray">Cincinnati, OH</span>
+              
+              <span class="text-gray"><?php 
+                echo $geolocator->getCity() . ', ' . $geolocator->getRegion();
+              ?></span>
             </a>
             <a class="modal-trigger" href="#location-modal">
               <strong class="text-white">Change</strong>
