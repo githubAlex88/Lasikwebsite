@@ -1,0 +1,105 @@
+.simple-page {
+	display: flex;
+	flex-direction: column;
+	background-color: $brand-primary;
+	min-height: 100vh;
+	&__header {
+		padding: 75px 15px 20px;
+	}
+	&__title {
+		color: $white;
+		font-size: 30px;
+		line-height: 35px;
+		text-align: center;
+	}
+	&__content {
+		flex-grow: 1;
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+		justify-content: center;
+		padding: 20px 15px;
+		background-color: $white;
+		&--center {
+			text-align: center;
+		}
+		&--no-padding {
+			padding: 0px;
+		}
+	}
+	&__text {
+		margin-bottom: 20px;
+		&--no-margin {
+			margin-bottom: 0px;
+		}
+	}
+	&__text,
+	&__link {
+		font-size: 16px;
+	}
+	&__footer {
+		display: flex;
+		.btn-simple {
+			flex-direction: column;
+			box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+		}
+		.btn-simple__icon {
+			margin: 0px 0px 20px;
+		}
+	}
+
+}
+
+@media screen and (min-width: $screen-x) {
+	.simple-page {
+		&__header {
+			padding: 85px 15px 30px;
+		}
+		&__title {
+			font-size: 36px;
+			line-height: 42px;
+		}
+		&__text {
+			margin-bottom: 35px;
+			&--no-margin {
+				margin-bottom: 0px;
+			}
+		}
+		&__text,
+		&__link {
+			font-size: 20px;
+			line-height: 28px;
+		}
+	}
+}
+
+@media screen and (min-width: $screen-sm) {
+	.simple-page {
+		&__header {
+			padding-top: 145px;
+		}
+		&__footer {
+			justify-content: center;
+			padding-top: 10px;
+			padding-bottom: 10px;
+			.btn-simple {
+				flex-direction: row;
+				margin: 0px 5px;
+			}
+			.btn-simple__icon {
+				margin-right: 20px;
+				margin-bottom: 0px;
+			}
+		}
+	}
+}
+
+@media screen and (min-width: $screen-md) {
+	.simple-page {
+		&__footer {
+			.btn-simple {
+				margin: 0px 10px;
+			}
+		}
+	}
+}

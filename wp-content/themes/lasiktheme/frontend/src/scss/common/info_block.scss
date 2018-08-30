@@ -1,0 +1,156 @@
+.info-block {
+	padding: 25px 10px;
+	background-color: $brand-light;
+	&--margin-bottom {
+		margin-bottom: 20px;
+	}
+	&__content {
+		text-align: center;
+	}
+	&__icon-wrapper {
+		margin-bottom: 10px;
+	}
+	&__icon {
+		color: $white;
+		font-size: 170px;
+	}
+	&__title {
+		margin-bottom: 15px;
+		color: $white;
+		font-size: 20px;
+		line-height: 26px;
+	}
+	&__subtitle {
+		margin-bottom: 10px;
+		color: #15314c;
+		font-size: 12px;
+	}
+	&__text {
+		margin-bottom: 20px;
+		color: $white;
+		font-size: 16px;
+		text-align: left;
+		&:last-child {
+			margin-bottom: 0px;
+		}
+		&--big {
+			font-size: 60px;
+			line-height: 70px;
+		}
+		&--center {
+			text-align: center;
+		}
+	}
+	&__questions {
+		padding-top: 20px;
+	}
+	&__footer {
+		padding-top: 40px;
+		margin: 0px -10px -25px;
+	}
+}
+
+@media screen and (min-width: $screen-x) {
+	.info-block {
+		padding: 40px 10px;
+		&__icon-wrapper {
+			margin-bottom: 20px;
+		}
+		&__subtitle {
+			margin-bottom: 5px;
+			font-size: 16px;
+		}
+		&__title {
+			font-size: 26px;
+			line-height: 32px;
+		}
+		&__text {
+			padding: 0px 5px;
+			margin-bottom: 30px;
+			font-size: 20px;
+			&--big {
+				font-size: 72px;
+				line-height: 80px;
+			}
+		}
+		&__questions {
+			padding-top: 40px;
+		}
+		&__button {
+			.btn-simple__icon {
+				font-size: 36px;
+			}
+			.btn-simple__text {
+				font-size: 20px;
+				line-height: 24px;
+			}
+		}
+		&__footer {
+			margin-bottom: -40px;
+		}
+	}
+}
+
+@media screen and (min-width: $screen-sm) {
+	.info-block {
+		padding: 45px 15px;
+		&__content {
+			display: flex;
+			align-items: center;
+			width: 100%;
+			text-align: left;
+		}
+		&__icon-wrapper {
+			flex: none;
+			max-width: 280px;
+			width: 100%;
+			margin-right: 30px;
+			margin-bottom: 0px;
+			img {
+				width: 100%;
+			}
+		}
+		&__icon {
+			font-size: 280px;
+		}
+		&__title {
+			font-size: 35px;
+			line-height: 45px;
+		}
+		&__text {
+			padding: 0;
+		}
+		&__questions {
+			max-width: 1170px;
+			width: 100%;
+			margin: 0px auto;
+		}
+		&__footer {
+			margin: 0px;
+		}
+	}
+}
+
+@media screen and (min-width: $screen-md) {
+	.info-block {
+		padding: 55px 15px;
+		&__content {
+			max-width: 1170px;
+			margin: 0px auto;
+		}
+		&__icon-wrapper {
+			max-width: 350px;
+			margin-right: 50px;
+		}
+		&__icon {
+			font-size: 350px;
+		}
+		&__title {
+			font-size: 45px;
+			line-height: 55px;
+		}
+		&__text {
+			margin-bottom: 20px;
+		}
+	}
+}

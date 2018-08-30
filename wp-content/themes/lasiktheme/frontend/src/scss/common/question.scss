@@ -1,0 +1,35 @@
+.question {
+	padding-bottom: 10px;
+	margin-bottom: 15px;
+	border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+	&:last-child {
+		margin-bottom: 0px;
+	}
+	&__category {
+		color: #32435d;
+		font-size: 14px;
+	}
+	&__title {
+		display: inline-block;
+		width: 100%;
+		color: $white;
+		font-size: 16px;
+		line-height: 24px;
+		transiton: .3s;
+		&:active,
+		&:focus,
+		&:hover {
+			color: $white;
+			text-decoration: underline;
+		}
+	}
+}
+
+@media screen and (min-width: $screen-x) {
+	.question {
+		&__title {
+			font-size: 19px;
+			line-height: 26px;
+		}
+	}
+}

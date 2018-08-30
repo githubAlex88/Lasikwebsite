@@ -1,0 +1,18 @@
+.rating {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	&__content {
+		display: flex;
+		align-items: center;
+	}
+	&__number {
+		margin-right: 10px;
+		color: $brand-secondary;
+		font-size: 14px;
+	}
+	&__reviews {
+		color: $brand-secondary;
+		font-size: 11px;
+	}
+}
