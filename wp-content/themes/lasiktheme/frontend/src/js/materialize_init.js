@@ -74,6 +74,9 @@ export default {
         $($(this).data('target')).hide();
       }
     });
+
+    // Add modal-trigger class to menu links
+    $( 'li.menu__item.modal-trigger' ).find( 'a' ).addClass( 'modal-trigger' );
     
     // Change location modal toggle
     $( $('.locations__link.active').attr('href') ).show();
@@ -151,5 +154,25 @@ export default {
     // Add the event for input field and button
     $(".search-modal__input").keyup( searchLocations );
     $(".search-modal__submit").click( searchLocations );
+
+
+    $('#vision-center').on('input', function(e) {
+      let items = $('.search-item');
+      let inputValue = $(this).val().toLowerCase();
+      items.each(function() {
+        let item = $(this);
+        $(this).find('.search-field').each(function() {
+          console.log($(this).text());
+          console.log($(this).text().toLowerCase().startsWith(inputValue));
+          if($(this).text().toLowerCase().startsWith(inputValue)) {
+            item.show();
+            return false;
+          } else {
+            item.hide();
+          }
+        });
+      });
+    });
+
 	}
 }
