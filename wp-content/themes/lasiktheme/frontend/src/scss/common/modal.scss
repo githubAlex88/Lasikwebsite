@@ -12,6 +12,9 @@
 	overflow-y: auto;
 	border-radius: 0px;
 	background-color: $brand-primary;
+	&--white {
+		background-color: $white;
+	}
 	&.information-kit {
 		padding: 45px 0px 0px;
 		.modal__wrapper {
@@ -45,15 +48,45 @@
 		position: absolute;
 		top: 5px;
 		right: 5px;
+		z-index: 5;
 		color: $white;
 		font-size: 35px;
+		&--blue {
+			color: $brand-primary;
+		}
 		&:focus {
 			background-color: transparent;
+		}
+	}
+	&__wrapper {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+		min-height: 100%;
+		&--padding {
+			padding: 45px 20px 100px;
 		}
 	}
 	&__header {
 		padding: 10px 0px;
 		text-align: center;
+		&--big-padding {
+			padding-top: 40px;
+			padding-bottom: 20px;
+		}
+		&--blue-line {
+			border-bottom: 2px solid $brand-light;
+		}
+		&--left {
+			text-align: left;
+		}
+	}
+	&__content {
+		&--big-padding {
+			padding-top: 40px;
+			padding-bottom: 20px;
+		}
 	}
 	&__title {
 		margin-bottom: 10px;
@@ -61,11 +94,32 @@
 		font-size: 20px;
 		font-family: $serif;
 		line-height: 24px;
+		&--big {
+			font-size: 25px;
+		}
+		&--blue {
+			color: $brand-primary;
+		}
+		&--center {
+			text-align: center;
+		}
+		&--no-margin {
+			margin: 0px;
+		}
 	}
 	&__subtitle {
 		margin-bottom: 0px;
 		color: $brand-dark;
 		font-size: 14px;
+	}
+	&__text {
+		margin-bottom: 20px;
+		color: #2d2d2d;
+		font-size: 16px;
+		line-height: 28px;
+		white-space: pre-wrap;
+		word-wrap: break-word;
+		overflow-wrap: break-word;
 	}
 	&__location {
 		.modal__title {
@@ -95,10 +149,28 @@
 		&__title {
 			margin-bottom: 20px;
 			font-size: 24px;
+			&--small {
+				font-size: 20px;
+				line-height: 26px;
+			}
+			&--big {
+				font-size: 35px;
+			}
+			&--no-margin {
+				margin: 0px;
+			}
 		}
 		&__subtitle {
 			font-size: 16px;
 			line-height: 30px;
+			&--small {
+				font-size: 14px;
+			}
+		}
+		&__text {
+			color: #2d2d2d;
+			font-size: 20px;
+			line-height: 32px;
 		}
 	}
 }
@@ -163,6 +235,10 @@
 		padding-bottom: 45px;
 		&__header {
 			margin-bottom: 10px;
+		}
+		&__text {
+			font-size: 18px;
+			line-height: 30px;
 		}
 		&__location {
 			.modal__title {

@@ -66,13 +66,14 @@ if ( ! class_exists( 'Lasik_FAQ' ) ) :
         'public' => true,
         'show_ui' => true,
         'show_in_menu' => true,
-        'menu_position' => 5,
+        'menu_position' => 20,
         'show_in_admin_bar' => true,
         'show_in_nav_menus' => true,
         'publicly_queryable' => true,
         'capability_type' => 'post',
       );
       register_post_type( 'lasik_faq', $post_type_args );
+      register_taxonomy_for_object_type( 'category', 'lasik_faq' );
 
       // Register Market Taxonomy
       if ( taxonomy_exists( 'lasik_market' ) )

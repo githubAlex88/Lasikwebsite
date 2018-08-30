@@ -36,6 +36,30 @@ export default {
 
     });
 
+    // Init selects
+    $('select').formSelect();
+
+    // Init carousel
+    $('.carousel').carousel({
+      fullWidth: true,
+      indicators: false
+    });
+
+    // move next carousel
+    $('.carousel-next').click(function(e){
+      e.preventDefault();
+      e.stopPropagation();
+      $('.carousel').carousel('next');
+    });
+
+    // move prev carousel
+    $('.carousel-prev').click(function(e){
+      e.preventDefault();
+      e.stopPropagation();
+      $('.carousel').carousel('prev');
+    });
+
+
     $('[data-open-submenu]').on('click', function(e) {
       let submenu = $($(this).data('open-submenu'));
       
@@ -50,6 +74,9 @@ export default {
         $($(this).data('target')).hide();
       }
     });
+
+    // Add modal-trigger class to menu links
+    $( 'li.menu__item.modal-trigger' ).find( 'a' ).addClass( 'modal-trigger' );
     
     // Change location modal toggle
     $( $('.locations__link.active').attr('href') ).show();
@@ -128,13 +155,6 @@ export default {
     $(".search-modal__input").keyup( searchLocations );
     $(".search-modal__submit").click( searchLocations );
 
-    $('.current-postiton__button').click(function(e) {
-      e.preventDefault();
-      // Reset data to visitor's location
-      $('#locationData').val("");
-      $('.search-modal__form').trigger('submit');
-    });
-
     $('#locations .search-modal__item').click(function(e) {
       var that = $(this);
       var data = {
@@ -151,7 +171,7 @@ export default {
       $('#location').val(that.find('p').text()).focus();
       $('#locationData').val(JSON.stringify(data));
     });
-
+    
     $('#vision-center').on('input', function(e) {
       let items = $('.search-item');
       let inputValue = $(this).val().toLowerCase();
@@ -169,5 +189,6 @@ export default {
         });
       });
     });
+
 	}
 }

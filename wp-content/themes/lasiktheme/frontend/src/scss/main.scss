@@ -49,6 +49,8 @@
 // Common .
 @import './common/helpers.scss';
 @import './common/app.scss';
+@import './common/arrow-item.scss';
+@import './common/address-block.scss';
 @import './common/buttons.scss';
 @import './common/links.scss';
 @import './common/typography.scss';
@@ -57,15 +59,32 @@
 @import './common/menu.scss';
 @import './common/sidenav.scss';
 @import './common/submenu.scss';
+@import './common/simple-page.scss';
 @import './common/actions.scss';
 @import './common/social.scss';
 @import './common/dropdown.scss';
 @import './common/footer.scss';
 @import './common/modal.scss';
+@import './common/plans.scss';
+@import './common/plans-item.scss';
+@import './common/more.scss';
+@import './common/vision-item.scss';
 @import './common/search-modal.scss';
+@import './common/search-article.scss';
 @import './common/star_bar.scss';
+@import './common/select-block.scss';
+@import './common/question.scss';
+@import './common/communion.scss';
+@import './common/rating.scss';
+@import './common/partners.scss';
+@import './common/partner-item.scss';
+@import './common/top_banner.scss';
+@import './common/breadcrumbs.scss';
+@import './common/info_block.scss';
+@import './common/info-text.scss';
+@import './common/img-section.scss';
 
 // for custom pages
 @import './pages/landing.scss';
 @import './pages/articles.scss';
-@import './pages/404.scss';
+@import './pages/404-page.scss';

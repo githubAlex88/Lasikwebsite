@@ -73,32 +73,6 @@ if ( ! class_exists( 'Lasik_Team_Members' ) ) :
       );
       register_post_type( 'lasik_team_member', $post_type_args );
 
-      // Add custom market taxonomy
-      $taxonomy_args = array(
-        'labels'      => array(
-          'name'          => __( 'Jobs', 'lasik-team-members' ),
-          'singular_name' => __( 'Job', 'lasik-team-members' ),
-          'all_items' => __( 'All Jobs', 'lasik-team-members' ),
-          'edit_item' => __( 'Edit Job', 'lasik-team-members' ),
-          'view_item' => __( 'View Job', 'lasik-team-members' ),
-          'update_item' => __( 'Update Job', 'lasik-team-members' ),
-          'add_new_item' => __( 'Add New Job', 'lasik-team-members' ),
-          'new_item_name' => __( 'New Job Name', 'lasik-team-members' ),
-          'search_items' => __( 'Search Jobs', 'lasik-team-members' ),
-          'popular_items' => __( 'Most used Jobs', 'lasik-team-members' ),
-          'add_or_remove_items' => __( 'Add or remove Jobs', 'lasik-team-members' ),
-          'choose_from_most_used' => __( 'Choose from the most used Jobs', 'lasik-team-members' ),
-          'not_found' => __( 'No Jobs found', 'lasik-locations' ),
-        ),
-        'description' => __( 'Job taxonomy', 'lasik-team-members' ),
-        'public' => true,
-        'show_ui' => true,
-        'show_in_menu' => true,
-        'show_in_admin_bar' => true,
-        'show_in_nav_menus' => true,
-        'publicly_queryable' => true,
-      );
-      register_taxonomy( 'lasik_job', 'lasik_team_member', $taxonomy_args );
       if ( taxonomy_exists( 'lasik_job' ) )
         register_taxonomy_for_object_type( 'lasik_job', 'lasik_team_member' );
       if ( taxonomy_exists( 'lasik_market' ) )
