@@ -29,7 +29,7 @@ if( have_rows( 'blocks' ) ) :
     $type = get_sub_field( 'type' );
     if ( $type ) :
       $block = get_sub_field( $type );
-      include( locate_template( "template-parts/page/blocks/{$type}.php", 'widgets' ) );
+      include( locate_template( "template-parts/page/blocks/{$type}.php" ) );
     endif;
   endwhile;
 endif;
@@ -49,7 +49,10 @@ endif;
 <!--=== More Section end ===-->
 
 <!--=== Articles Section start ===-->
-<?php get_template_part( 'template-parts/page/articles-section', 'widgets' ); ?>
+<section class="article-section wrap-article-list">
+  <?php $posts_per_page = 4; ?>
+  <?php include( locate_template( 'template-parts/page/articles-section.php' ) ); ?>
+</section>
 <!--=== Articles Section end ===-->
 
 <?php get_footer(); ?>
