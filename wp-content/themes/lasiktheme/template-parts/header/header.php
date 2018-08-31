@@ -1,4 +1,3 @@
-<?php global $geolocator; ?>
 <!--=== Header start ===-->
 <header class="header">
   <!--=== Header Top start ===-->
@@ -52,9 +51,7 @@
             <a class="header-top__link" href="#">
               <i class="far fa-map-marker header-top__icon"></i>
               
-              <span class="text-gray"><?php 
-                echo $geolocator->getCity() . ', ' . $geolocator->getRegion();
-              ?></span>
+              <span class="text-gray">Cinncinati, OH</span>
             </a>
             <a class="modal-trigger" href="#location-modal">
               <strong class="text-white">Change</strong>
