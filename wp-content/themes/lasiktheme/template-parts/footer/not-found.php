@@ -1,4 +1,4 @@
-<section>  
+<div class="page-404__footer">  
     <div class="error__footer">
         <div class="actions">
             <div class="actions__item">
@@ -27,4 +27,4 @@
           </span>
         </a>
     </div>
-</section>
+</div>

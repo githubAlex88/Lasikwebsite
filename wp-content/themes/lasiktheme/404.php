@@ -11,15 +11,13 @@
 
 get_header(); ?>
 
-<section class="section-error error-404">
-	<div class="container align-center text-white">
+<section class="section-error error-404 page-404 align-center">
 		<header class="page-header">
-			<h1 class="page-title"><?php _e("Content Not Found");?></h1>
+			<h1 class="page-404__title"><?php _e("Content Not Found");?></h1>
 		</header>
-		<div class="content">
-			<p><?php _e("Unfortunately, the content you are looking for either no longer exisits on the site, or the link you clicked was broken"); ?></p>
+		<div class="page-404__content">
+			<p class="page-404__text"><?php _e("Unfortunately, the content you are looking for either no longer exisits on the site, or the link you clicked was broken"); ?></p>
 		</div>
-	</div>
+		<?php get_footer('not-found'); ?>
+	
 </section>
-
-<?php get_footer('not-found');

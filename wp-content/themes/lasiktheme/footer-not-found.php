@@ -15,14 +15,15 @@
 ?>
 
 		
+	<?php
+		get_template_part( 'template-parts/footer/not-found' );
+	?>
+		
+	</div><!-- content-wrapper -->
 		<?php
-			get_template_part( 'template-parts/footer/not-found' );
-
 			get_template_part( 'template-parts/modals/search-modal', 'widgets' );
 			get_template_part( 'template-parts/modals/location-modal', 'widgets' );
 		?>
-		
-	</div><!-- content-wrapper -->
 </div><!-- #app -->
 
 </div>

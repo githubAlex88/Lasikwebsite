@@ -91,7 +91,7 @@
   .lr-direction {
     .image-wrapper {
       &:before {
-        background-image: url('../assets/images/lca-quiz-decoration-bg.png');
+        background-image: url('assets/images/lca-quiz-decoration-bg.png');
         left: 0;
       }
       &:after {
@@ -102,7 +102,7 @@
   .rl-direction {
     .image-wrapper {
       &:before {
-        background-image: url('../assets/images/lca-information-kit-decoration-bg.png');
+        background-image: url('assets/images/lca-information-kit-decoration-bg.png');
         right: 0;
       }
       &:after {
