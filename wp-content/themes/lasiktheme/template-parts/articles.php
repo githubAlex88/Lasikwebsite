@@ -21,7 +21,7 @@
           wp_reset_postdata();
           ?>
           <div class="row">
-            <?php if ( $articles[1] ) : ?>
+            <?php if ( isset( $articles[1] ) ) : ?>
               <div class="col s12 m6">
                 <?php
                 $post = $articles[1];
@@ -31,7 +31,7 @@
                 ?>
               </div>
             <?php endif; ?>
-            <?php if ( $articles[2] ) : ?>
+            <?php if ( isset( $articles[2] ) ) : ?>
               <div class="col s12 m6">
                 <?php
                 $post = $articles[2];
@@ -54,7 +54,7 @@
             </h2>
           </div>
         </div>
-        <?php if ( $articles[3] ) : ?>
+        <?php if ( isset( $articles[3] ) ) : ?>
           <div class="col s12">
             <?php
             $post = $articles[3];
@@ -64,7 +64,7 @@
             ?>
           </div>
         <?php endif; ?>
-        <?php if ( $articles[4] ) : ?>
+        <?php if ( isset( $articles[4] ) ) : ?>
           <div class="col s12 m6">
             <?php
             $post = $articles[4];
@@ -74,7 +74,7 @@
             ?>
           </div>
         <?php endif; ?>
-        <?php if ( $articles[5] ) : ?>
+        <?php if ( isset( $articles[5] ) ) : ?>
           <div class="col s12 m6">
             <?php
             $post = $articles[5];
