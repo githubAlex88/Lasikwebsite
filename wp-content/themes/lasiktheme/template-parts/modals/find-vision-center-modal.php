@@ -47,7 +47,6 @@
                 )
               )
             ));
-            $team_members_array = array();
             foreach ( $team_members as $team_member ) : ?>
               <!--=== Vision item start ===-->
               <div class="vision-item search-item">
@@ -72,7 +71,7 @@
                 <div class="vision-item__body">
                   <div class="vision-item__content">
                     <div class="vision-item__doctor">
-                      <img src="<?php echo get_the_post_thumbnail_url( $team_member->ID ); ?>" alt="doctor">
+                      <img src="<?php echo get_the_post_thumbnail_url( $team_member->ID ); ?>" alt="Dr. <?php echo get_the_title( $team_member->ID ); ?>">
                     </div>
                     <div class="vision-item__info">
                       <h3 class="vision-item__title">
@@ -85,8 +84,8 @@
                   <a href="#" class="btn-simple btn-simple--icon btn-simple--orange btn-simple--full-width">
                     <i class="far fa-calendar-alt btn-simple__icon"></i>
                     <span class="btn-simple__text btn-simple__text--small">
-                  Schedule Free Eye Exam at our <?php the_field( 'location_city' ); ?> Vision Center
-                </span>
+                      Schedule Free Eye Exam at our <?php the_field( 'location_city' ); ?> Vision Center
+                    </span>
                   </a>
                 </div>
               </div>
