@@ -71,6 +71,7 @@ if ( ! class_exists( 'Lasik_Insurance_Plans' ) ) :
         'show_in_nav_menus' => true,
         'publicly_queryable' => true,
         'capability_type' => 'post',
+        'rewrite' => array( 'slug' => 'insurance-plan', 'with_front' => false),
       );
       register_post_type( 'lasik_insurance_plan', $post_type_args );
 

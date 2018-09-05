@@ -70,6 +70,7 @@ if ( ! class_exists( 'Lasik_Team_Members' ) ) :
         'show_in_nav_menus' => true,
         'publicly_queryable' => true,
         'capability_type' => 'post',
+        'rewrite' => array( 'slug' => 'team-member', 'with_front' => false),
       );
       register_post_type( 'lasik_team_member', $post_type_args );
 

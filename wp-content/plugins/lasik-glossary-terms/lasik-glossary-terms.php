@@ -72,6 +72,7 @@ if ( ! class_exists( 'Lasik_Glossary_Terms' ) ) :
         'show_in_nav_menus' => true,
         'publicly_queryable' => true,
         'capability_type' => 'post',
+        'rewrite' => array( 'slug' => 'term', 'with_front' => false),
       );
       register_post_type( 'lasik_glossary_term', $post_type_args );
 

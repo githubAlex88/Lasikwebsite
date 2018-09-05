@@ -69,6 +69,7 @@ if ( ! class_exists( 'Lasik_Locations' ) ) :
         'show_in_nav_menus' => true,
         'publicly_queryable' => true,
         'capability_type' => 'post',
+        'rewrite' => array( 'slug' => 'vision-center', 'with_front' => false),
       );
       register_post_type( 'lasik_location', $post_type_args );
 

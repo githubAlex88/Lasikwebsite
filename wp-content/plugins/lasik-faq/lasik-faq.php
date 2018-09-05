@@ -71,6 +71,7 @@ if ( ! class_exists( 'Lasik_FAQ' ) ) :
         'show_in_nav_menus' => true,
         'publicly_queryable' => true,
         'capability_type' => 'post',
+        'rewrite' => array( 'slug' => 'faq', 'with_front' => false),
       );
       register_post_type( 'lasik_faq', $post_type_args );
       register_taxonomy_for_object_type( 'category', 'lasik_faq' );

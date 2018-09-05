@@ -71,6 +71,7 @@ if ( ! class_exists( 'Lasik_Partnerships' ) ) :
         'show_in_nav_menus' => true,
         'publicly_queryable' => true,
         'capability_type' => 'post',
+        'rewrite' => array( 'slug' => 'partner', 'with_front' => false),
       );
       register_post_type( 'lasik_partnership', $post_type_args );
 
