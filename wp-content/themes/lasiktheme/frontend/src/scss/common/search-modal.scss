@@ -151,6 +151,9 @@
 		flex-direction: column;
 		justify-content: center;
 		min-height: 100%;
+		&.active {
+			justify-content: normal;
+		}
 		&__content {
 			margin-top: 20px;
 		}
