@@ -101,24 +101,7 @@ get_header(); ?>
             <input id="id_location" class="location-search__input autocomplite-trigger browser-default" data-target="#location-autocomplite" type="text" placeholder="Where are you located?">
             <div class="location-search__autocomplete" id="location-autocomplite">
               <ul>
-                <li>
-                  <a href="#">
-                    <span>Zip Code Match</span>
-                    <p>Cincinnati Vision Center</p>
-                  </a>
-                </li>
-                <li>
-                  <a href="#">
-                    <span>Zip Code Match</span>
-                    <p>Cincinnati Vision Center</p>
-                  </a>
-                </li>
-                <li>
-                  <a href="#">
-                    <span>Zip Code Match</span>
-                    <p>Cincinnati Vision Center</p>
-                  </a>
-                </li>
+                <?php get_template_part( 'template-parts/modals/location-list' ); ?>
               </ul>
             </div>
             <a class="modal-trigger location-search__show-all" href="#all-location">View All Locations</a>

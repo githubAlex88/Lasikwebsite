@@ -1,6 +1,6 @@
 <?php
 // Get state field
-$state_field = get_field_object('field_5b4006e721d1e');
+$state_field = get_field_object('field_5b8719391ae7e');
 // Get field choices ( array: state_code => state_name )
 $states = $state_field['choices'];
 ?>
