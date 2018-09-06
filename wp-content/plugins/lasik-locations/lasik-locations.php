@@ -52,7 +52,7 @@ if ( ! class_exists( 'Lasik_Locations' ) ) :
           'all_items' => __( 'All Vision Centers', 'lasik-locations' ),
           'archives' => __( 'Vision Center Archives', 'lasik-locations' ),
           'attributes' => __( 'Vision Center Attributes', 'lasik-locations' ),
-          'insert_into_item' => __( 'Insert into Vision Center', 'lasik-locations' ),
+          'insert_into_item' => __( 'Insert into VisionCenter', 'lasik-locations' ),
           'uploaded_to_this_item' => __( 'Uploaded to this Vision CEnter', 'lasik-locations' ),
           'featured_image' => __( 'Vision Center Featured Image', 'lasik-locations' ),
           'set_featured_image' => __( 'Set Vision Center Featured Image', 'lasik-locations' ),
@@ -69,37 +69,11 @@ if ( ! class_exists( 'Lasik_Locations' ) ) :
         'show_in_nav_menus' => true,
         'publicly_queryable' => true,
         'capability_type' => 'post',
+        'rewrite' => array( 'slug' => 'vision-center', 'with_front' => false),
       );
       register_post_type( 'lasik_location', $post_type_args );
 
-      // Add custom market taxonomy
-      $taxonomy_args = array(
-        'labels'      => array(
-          'name'          => __( 'Markets', 'lasik-locations' ),
-          'singular_name' => __( 'Market', 'lasik-locations' ),
-          'all_items' => __( 'All Markets', 'lasik-locations' ),
-          'edit_item' => __( 'Edit Market', 'lasik-locations' ),
-          'view_item' => __( 'View Market', 'lasik-locations' ),
-          'update_item' => __( 'Update Market', 'lasik-locations' ),
-          'add_new_item' => __( 'Add New Market', 'lasik-locations' ),
-          'new_item_name' => __( 'New Market Name', 'lasik-locations' ),
-          'search_items' => __( 'Search Markets', 'lasik-locations' ),
-          'popular_items' => __( 'Most used Markets', 'lasik-locations' ),
-          'add_or_remove_items' => __( 'Add or remove Markets', 'lasik-locations' ),
-          'choose_from_most_used' => __( 'Choose from the most used Markets', 'lasik-locations' ),
-          'not_found' => __( 'No Markets found', 'lasik-locations' ),
-        ),
-        'description' => __( 'Market taxonomy', 'lasik-locations' ),
-        'public' => true,
-        'show_ui' => true,
-        'show_in_menu' => true,
-        'show_in_admin_bar' => true,
-        'show_in_nav_menus' => true,
-        'publicly_queryable' => true,
-      );
-      register_taxonomy( 'lasik_market', 'lasik_location', $taxonomy_args );
       if ( taxonomy_exists( 'lasik_market' ) ) {
-        register_taxonomy_for_object_type( 'lasik_market', 'post' );
         register_taxonomy_for_object_type( 'lasik_market', 'lasik_location' );
       }
 

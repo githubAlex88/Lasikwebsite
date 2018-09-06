@@ -55,7 +55,7 @@ if ( ! class_exists( 'Lasik_Glossary_Terms' ) ) :
           'all_items' => __( 'All Glossary Terms', 'lasik-glossary-terms' ),
           'archives' => __( 'Glossary Term Archives', 'lasik-glossary-terms' ),
           'attributes' => __( 'Glossary Term Attributes', 'lasik-glossary-terms' ),
-          'insert_into_item' => __( 'Insert into Glossary Term', 'lasik-glossary-terms' ),
+          'insert_into_item' => __( 'Insert into GlossaryTerm', 'lasik-glossary-terms' ),
           'uploaded_to_this_item' => __( 'Uploaded to this Glossary Term', 'lasik-glossary-terms' ),
           'featured_image' => __( 'Glossary Term Picture', 'lasik-glossary-terms' ),
           'set_featured_image' => __( 'Set Glossary Term Picture', 'lasik-glossary-terms' ),
@@ -67,11 +67,12 @@ if ( ! class_exists( 'Lasik_Glossary_Terms' ) ) :
         'public' => true,
         'show_ui' => true,
         'show_in_menu' => true,
-        'menu_position' => 5,
+        'menu_position' => 20,
         'show_in_admin_bar' => true,
         'show_in_nav_menus' => true,
         'publicly_queryable' => true,
         'capability_type' => 'post',
+        'rewrite' => array( 'slug' => 'term', 'with_front' => false),
       );
       register_post_type( 'lasik_glossary_term', $post_type_args );
 

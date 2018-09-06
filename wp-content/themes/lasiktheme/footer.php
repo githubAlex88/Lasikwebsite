@@ -20,6 +20,7 @@
 
 			get_template_part( 'template-parts/modals/search-modal', 'widgets' );
 			get_template_part( 'template-parts/modals/location-modal', 'widgets' );
+			get_template_part( 'template-parts/modals/find-vision-center-modal', 'widgets' );
 			get_template_part( 'template-parts/modals/candidacy-quiz', 'widgets' );
 			get_template_part( 'template-parts/modals/information-kit', 'widgets' );
 			get_template_part( 'template-parts/modals/view-all-locations', 'widgets' );

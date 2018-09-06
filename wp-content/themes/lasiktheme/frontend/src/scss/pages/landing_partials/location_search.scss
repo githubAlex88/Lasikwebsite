@@ -74,14 +74,12 @@
     ul {
       margin: 1px 0px 0px;
     }
-    li {
-      margin-bottom: 1px;
-    }
-    a {
+    li, li:hover {
       display: inline-block;
       width: 100%;
       padding: 5px 15px 5px 10px;
       background-color: $white;
+      margin-bottom: 1px;
     }
     span {
       color: #acacac;
@@ -152,7 +150,7 @@
       }
     }
     &__autocomplete {
-      a {
+      li {
         font-size: 14px;
         padding: 12px 15px 12px 95px;
       }

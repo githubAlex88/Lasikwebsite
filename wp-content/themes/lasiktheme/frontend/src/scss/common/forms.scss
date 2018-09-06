@@ -116,6 +116,31 @@ input::-webkit-inner-spin-button {
 	}
 }
 
+.form-select {
+	.select-wrapper {
+		& + label {
+			top: -30px;
+			padding-left: 10px;
+			color: $brand-dark;
+			font-size: 14px;
+		}
+		input.select-dropdown {
+			padding-left: 10px;
+			border-bottom: 2px solid $brand-light;
+			font-size: 22px;
+			box-sizing: border-box;
+			color: $brand-dark;
+		}
+		.dropdown-content {
+			li {
+				& > span {
+					color: $brand-dark;
+				}
+			}
+		}
+	}
+}
+
 .form-confirmation {
 	padding: 20px 0px;
 	.form-item {

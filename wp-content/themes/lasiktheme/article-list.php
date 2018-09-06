@@ -8,12 +8,11 @@
 
 get_header();
 
-get_template_part("template-parts/articles/top_section"); ?>
+get_template_part("template-parts/articles/top-section"); ?>
 
 <section class="wrap-article-list">
   <div class="article-list container">
     <?php
-
     // Query articles
     $article_query = new WP_Query( array(
       'posts_per_page'  => 11,
@@ -26,37 +25,18 @@ get_template_part("template-parts/articles/top_section"); ?>
     if ( $article_query->have_posts() ) :
       while ( $article_query->have_posts() ) :
         $article_query->the_post();
-        $item_count++; ?>
-        <div class="item">
-          <div class="img">
-            <?php the_post_thumbnail( 'thumbnail' ); ?>
-          </div>
-          <div class="info">
-            <div class="category">
-              <?php 
-                $categories = get_the_category(); 
-                if( !empty($categories) )
-                  echo esc_html( $categories[0]->name );
-              ?>
-            </div>
-            <div class="title">
-              <a href="<?php the_permalink(); ?>" >
-                <?php the_title(); ?>
-              </a>
-            </div>
-            <div class="description">
-              <?php the_excerpt(); ?>
-            </div>
-          </div>
-        </div>
-        <?php if ( $item_count == 2 ) : ?>
-          <?php echo do_shortcode( '[cta_banner]' ); ?>
-        <?php endif; ?>
-      <?php endwhile; ?>
+        $item_count++;
 
-       <?php wp_reset_postdata(); ?>
+        // Get article item
+        get_template_part( 'template-parts/articles/article-item' );
 
-    <?php endif; ?>
+        if ( $item_count == 2 ) :
+          echo do_shortcode( '[cta_banner]' );
+        endif;
+      endwhile;
+
+      wp_reset_postdata();
+    endif; ?>
   </div>
   <div class="article-list-load">
     <a href="#" class="button button-secondary button-big">

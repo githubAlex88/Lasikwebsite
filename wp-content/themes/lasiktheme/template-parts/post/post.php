@@ -56,21 +56,15 @@
 			<div class="social social--horizontal">
 				<h2 class="social__title">Share:</h2>
 				<ul class="social__list">
-					<li class="social__item">
-						<a href="#" class="social__link">
-							<i class="fab fa-twitter"></i>
-						</a>
-					</li>
-					<li class="social__item">
-						<a href="#" class="social__link">
-							<i class="fab fa-facebook-f"></i>
-						</a>
-					</li>
-					<li class="social__item">
-						<a href="#" class="social__link">
-							<i class="far fa-link"></i>
-						</a>
-					</li>
+          <li class="social__item">
+            <?php echo do_shortcode( '[addtoany buttons="twitter"]' ); ?>
+          </li>
+          <li class="social__item social__link">
+            <?php echo do_shortcode( '[addtoany buttons="facebook"]' ); ?>
+          </li>
+          <li class="social__item">
+            <?php echo do_shortcode( '[addtoany buttons="copy_link"]' ); ?>
+          </li>
 				</ul>
 			</div>
 

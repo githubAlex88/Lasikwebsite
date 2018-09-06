@@ -1,9 +1,33 @@
 .search-modal {
+	position: relative;
+	&--with-button {
+		padding-bottom: 100px;
+	}
 	&__content {
 		position: relative;
 		max-width: 1070px;
 		width: 100%;
 		margin: 60px 0px 20px;
+	}
+	&__title {
+		margin-bottom: 20px;
+		color: $white;
+		font-size: 20px;
+		line-height: 26px;
+		font-weight: 700;
+		letter-spacing: 3px;
+		text-align: center;
+		text-transform: uppercase;
+	}
+	.search-modal__title {
+		margin-top: 20px;
+	}
+	&__subtitle {
+		margin-bottom: 0px;
+		color: $white;
+		font-size: 18px;
+		font-weight: 400;
+		text-align: center;
 	}
 	.search-modal__label {
 		top: 50%;
@@ -46,11 +70,18 @@
 	&__result {
 		position: absolute;
 		top: 100%;
+		display: none;
 		width: 100%;
 		margin: 0px;
 		&.active {
-			position: relative;
+			display: block;
 		}
+	}
+	&__results {
+		padding-top: 30px;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
 	}
 	&__item {
 		padding: 5px 15px;
@@ -91,6 +122,9 @@
 		&__content {
 			margin-top: 100px;
 		}
+		&__title {
+			font-size: 26px;
+		}
 		.search-modal__input {
 			height: 60px;
 			padding-right: 35px;
@@ -114,10 +148,20 @@
 	.search-modal {
 		display: flex;
 		align-items: center;
+		flex-direction: column;
 		justify-content: center;
-		height: 100%;
+		min-height: 100%;
+		&.active {
+			justify-content: normal;
+		}
 		&__content {
 			margin-top: 20px;
+		}
+		&__title {
+			font-size: 36px;
+		}
+		&__subtitle {
+			margin-bottom: 30px;
 		}
 		&__label {
 			padding-left: 20px;

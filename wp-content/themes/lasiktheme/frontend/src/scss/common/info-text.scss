@@ -1,0 +1,21 @@
+.info-text {
+	padding: 20px 0px;
+	text-align: center;
+	&__text {
+		color: $brand-primary;
+		font-size: 13px;
+		line-height: 16px;
+		&:last-child {
+			margin-bottom: 0px;
+		}
+	}
+}
+
+@media screen and (min-width: $screen-sm) {
+	.info-text {
+		&__text {
+			font-size: 16px;
+			line-height: 22px;
+		}
+	}
+}

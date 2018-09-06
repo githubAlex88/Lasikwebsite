@@ -1,360 +1,379 @@
 {
-  "key": "group_5b2d3cf7a56c0",
-  "title": "Homepage Fields",
-  "fields": [
-    {
-      "key": "field_5b28f06158bbc",
-      "label": "top section",
-      "name": "top_section",
-      "type": "repeater",
-      "instructions": "",
-      "required": 0,
-      "conditional_logic": 0,
-      "wrapper": {
-          "width": "",
-          "class": "",
-          "id": ""
-      },
-      "collapsed": "",
-      "min": 0,
-      "max": 0,
-      "layout": "table",
-      "button_label": "",
-      "sub_fields": [
-          {
-              "key": "field_5b31fe8044d89",
-              "label": "Special Offer",
-              "name": "special_offer",
-              "type": "group",
-              "instructions": "",
-              "required": 0,
-              "conditional_logic": 0,
-              "wrapper": {
-                  "width": "",
-                  "class": "",
-                  "id": ""
-              },
-              "layout": "block",
-              "sub_fields": [
-                  {
-                      "key": "field_5b31fe9a44d8a",
-                      "label": "Title",
-                      "name": "title",
-                      "type": "text",
-                      "instructions": "",
-                      "required": 0,
-                      "conditional_logic": 0,
-                      "wrapper": {
-                          "width": "",
-                          "class": "",
-                          "id": ""
-                      },
-                      "default_value": "",
-                      "placeholder": "",
-                      "prepend": "",
-                      "append": "",
-                      "maxlength": ""
-                  },
-                  {
-                      "key": "field_5b31fed544d8b",
-                      "label": "Subtitle",
-                      "name": "subtitle",
-                      "type": "text",
-                      "instructions": "",
-                      "required": 0,
-                      "conditional_logic": 0,
-                      "wrapper": {
-                          "width": "",
-                          "class": "",
-                          "id": ""
-                      },
-                      "default_value": "",
-                      "placeholder": "",
-                      "prepend": "",
-                      "append": "",
-                      "maxlength": ""
-                  },
-                  {
-                      "key": "field_5b32000ad4b82",
-                      "label": "Offer text",
-                      "name": "offer_text",
-                      "type": "text",
-                      "instructions": "",
-                      "required": 0,
-                      "conditional_logic": 0,
-                      "wrapper": {
-                          "width": "",
-                          "class": "",
-                          "id": ""
-                      },
-                      "default_value": "",
-                      "placeholder": "",
-                      "prepend": "",
-                      "append": "",
-                      "maxlength": ""
-                  },
-                  {
-                      "key": "field_5b320013d4b83",
-                      "label": "Schedule Button Text",
-                      "name": "schedule_button_text",
-                      "type": "text",
-                      "instructions": "",
-                      "required": 0,
-                      "conditional_logic": 0,
-                      "wrapper": {
-                          "width": "",
-                          "class": "",
-                          "id": ""
-                      },
-                      "default_value": "",
-                      "placeholder": "",
-                      "prepend": "",
-                      "append": "",
-                      "maxlength": ""
-                  }
-              ]
-          }
-      ]
-    },
-    {
-      "key": "field_5b477f12718bf",
-      "label": "Doctor Spotlight",
-      "name": "doctor_spotlight",
-      "type": "post_object",
-      "instructions": "",
-      "required": 0,
-      "conditional_logic": 0,
-      "wrapper": {
-        "width": "",
-        "class": "",
-        "id": ""
-      },
-      "post_type": [
-        "lasik_team_member"
-      ],
-      "taxonomy": [],
-      "allow_null": 0,
-      "multiple": 0,
-      "return_format": "object",
-      "ui": 1
-    },
-    {
-      "key": "field_5b4e4dfcf93f6",
-      "label": "Candidacy Title",
-      "name": "candidacy_title",
-      "type": "text",
-      "instructions": "",
-      "required": 1,
-      "conditional_logic": 0,
-      "wrapper": {
-        "width": "",
-        "class": "",
-        "id": ""
-      },
-      "default_value": "Find Out if LASIK is Right for You",
-      "placeholder": "",
-      "prepend": "",
-      "append": "",
-      "maxlength": ""
-    },
-    {
-      "key": "field_5b4e4f1fec69a",
-      "label": "Candidacy Image",
-      "name": "candidacy_image",
-      "type": "image",
-      "instructions": "",
-      "required": 1,
-      "conditional_logic": 0,
-      "wrapper": {
-        "width": "",
-        "class": "",
-        "id": ""
-      },
-      "return_format": "url",
-      "preview_size": "thumbnail",
-      "library": "all",
-      "min_width": "",
-      "min_height": "",
-      "min_size": "",
-      "max_width": "",
-      "max_height": "",
-      "max_size": "",
-      "mime_types": ""
-    },
-    {
-      "key": "field_5b4e4f4aec69b",
-      "label": "Download Information Image",
-      "name": "download_information_image",
-      "type": "image",
-      "instructions": "",
-      "required": 1,
-      "conditional_logic": 0,
-      "wrapper": {
-        "width": "",
-        "class": "",
-        "id": ""
-      },
-      "return_format": "url",
-      "preview_size": "thumbnail",
-      "library": "all",
-      "min_width": "",
-      "min_height": "",
-      "min_size": "",
-      "max_width": "",
-      "max_height": "",
-      "max_size": "",
-      "mime_types": ""
-    },
-    {
-      "key": "field_5b4e4e0ef93f7",
-      "label": "Candidacy Text",
-      "name": "candidacy_text",
-      "type": "text",
-      "instructions": "",
-      "required": 1,
-      "conditional_logic": 0,
-      "wrapper": {
-        "width": "",
-        "class": "",
-        "id": ""
-      },
-      "default_value": "Take this short quiz and find out if a LasikPlus procedure is the right solution for you.",
-      "placeholder": "",
-      "prepend": "",
-      "append": "",
-      "maxlength": ""
-    },
-    {
-      "key": "field_5b4e4e23f93f8",
-      "label": "Candidacy Button Text",
-      "name": "candidacy_button_text",
-      "type": "text",
-      "instructions": "",
-      "required": 1,
-      "conditional_logic": 0,
-      "wrapper": {
-        "width": "",
-        "class": "",
-        "id": ""
-      },
-      "default_value": "Take Candidacy Quiz Now",
-      "placeholder": "",
-      "prepend": "",
-      "append": "",
-      "maxlength": ""
-    },
-    {
-      "key": "field_5b4e4e47f93fa",
-      "label": "Download Information Title",
-      "name": "download_information_title",
-      "type": "text",
-      "instructions": "",
-      "required": 1,
-      "conditional_logic": 0,
-      "wrapper": {
-        "width": "",
-        "class": "",
-        "id": ""
-      },
-      "default_value": "Get Your Free Information Kit",
-      "placeholder": "",
-      "prepend": "",
-      "append": "",
-      "maxlength": ""
-    },
-    {
-      "key": "field_5b4e4e6ef93fb",
-      "label": "Download Information Text",
-      "name": "download_information_text",
-      "type": "text",
-      "instructions": "",
-      "required": 1,
-      "conditional_logic": 0,
-      "wrapper": {
-        "width": "",
-        "class": "",
-        "id": ""
-      },
-      "default_value": "Learn about everything LasikPlus offers.",
-      "placeholder": "",
-      "prepend": "",
-      "append": "",
-      "maxlength": ""
-    },
-    {
-      "key": "field_5b4e4e7af93fc",
-      "label": "Download Information Button Text",
-      "name": "download_information_button_text",
-      "type": "text",
-      "instructions": "",
-      "required": 1,
-      "conditional_logic": 0,
-      "wrapper": {
-        "width": "",
-        "class": "",
-        "id": ""
-      },
-      "default_value": "Request Information Kit Now",
-      "placeholder": "",
-      "prepend": "",
-      "append": "",
-      "maxlength": ""
-    },
-    {
-      "key": "field_5b4e4eaac2bb6",
-      "label": "Article Feed Title",
-      "name": "article_feed_title",
-      "type": "text",
-      "instructions": "",
-      "required": 1,
-      "conditional_logic": 0,
-      "wrapper": {
-        "width": "",
-        "class": "",
-        "id": ""
-      },
-      "default_value": "Recently Published Articles & Other Laser Eye Surgery Resources",
-      "placeholder": "",
-      "prepend": "",
-      "append": "",
-      "maxlength": ""
-    },
-    {
-      "key": "field_5b4e4eb5c2bb7",
-      "label": "Article Feed Banner Content",
-      "name": "article_feed_banner_content",
-      "type": "text",
-      "instructions": "",
-      "required": 0,
-      "conditional_logic": 0,
-      "wrapper": {
-        "width": "",
-        "class": "",
-        "id": ""
-      },
-      "default_value": "Read about our patient Leesha's experience and how it helped her with her job as a YouTube Beauty Vlogger! <a href=\"https:\/\/buff.ly\/2kZPCw6\" class=\"feed-banner__link\" title=\"banner\">https:\/\/buff.ly\/2kZPCw6<\/a>",
-      "placeholder": "",
-      "prepend": "",
-      "append": "",
-      "maxlength": ""
-    }
-  ],
-  "location": [
-    [
-      {
-        "param": "page",
-        "operator": "==",
-        "value": "96"
-      }
-    ]
-  ],
-  "menu_order": 1,
-  "position": "normal",
-  "style": "seamless",
-  "label_placement": "top",
-  "instruction_placement": "label",
-  "hide_on_screen": "",
-  "active": 1,
-  "description": "",
-  "modified": 1531866860
+    "key": "group_5b2d3cf7a56c0",
+    "title": "Homepage Fields",
+    "fields": [
+        {
+            "key": "field_5b28f06158bbc",
+            "label": "top section",
+            "name": "top_section",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "collapsed": "",
+            "min": 0,
+            "max": 0,
+            "layout": "table",
+            "button_label": "",
+            "sub_fields": [
+                {
+                    "key": "field_5b31fe8044d89",
+                    "label": "Special Offer",
+                    "name": "special_offer",
+                    "type": "group",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "layout": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_5b31fe9a44d8a",
+                            "label": "Title",
+                            "name": "title",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        },
+                        {
+                            "key": "field_5b31fed544d8b",
+                            "label": "Subtitle",
+                            "name": "subtitle",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        },
+                        {
+                            "key": "field_5b32000ad4b82",
+                            "label": "Offer text",
+                            "name": "offer_text",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        },
+                        {
+                            "key": "field_5b320013d4b83",
+                            "label": "Schedule Button Text",
+                            "name": "schedule_button_text",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "key": "field_5b477f12718bf",
+            "label": "Doctor Spotlight",
+            "name": "doctor_spotlight",
+            "type": "post_object",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "lasik_team_member"
+            ],
+            "taxonomy": [],
+            "allow_null": 0,
+            "multiple": 0,
+            "return_format": "object",
+            "ui": 1
+        },
+        {
+            "key": "field_5b4e4dfcf93f6",
+            "label": "Candidacy Title",
+            "name": "candidacy_title",
+            "type": "text",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Find Out if LASIK is Right for You",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5b4e4f1fec69a",
+            "label": "Candidacy Image",
+            "name": "candidacy_image",
+            "type": "image",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "url",
+            "preview_size": "thumbnail",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ""
+        },
+        {
+            "key": "field_5b4e4f4aec69b",
+            "label": "Download Information Image",
+            "name": "download_information_image",
+            "type": "image",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "url",
+            "preview_size": "thumbnail",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ""
+        },
+        {
+            "key": "field_5b4e4e0ef93f7",
+            "label": "Candidacy Text",
+            "name": "candidacy_text",
+            "type": "text",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Take this short quiz and find out if a LasikPlus procedure is the right solution for you.",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5b4e4e23f93f8",
+            "label": "Candidacy Button Text",
+            "name": "candidacy_button_text",
+            "type": "text",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Take Candidacy Quiz Now",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5b4e4e47f93fa",
+            "label": "Download Information Title",
+            "name": "download_information_title",
+            "type": "text",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Get Your Free Information Kit",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5b4e4e6ef93fb",
+            "label": "Download Information Text",
+            "name": "download_information_text",
+            "type": "text",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Learn about everything LasikPlus offers.",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5b4e4e7af93fc",
+            "label": "Download Information Button Text",
+            "name": "download_information_button_text",
+            "type": "text",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Request Information Kit Now",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5b4e4eaac2bb6",
+            "label": "Article Feed Title",
+            "name": "article_feed_title",
+            "type": "text",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Recently Published Articles & Other Laser Eye Surgery Resources",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5b4e4eb5c2bb7",
+            "label": "Article Feed Banner Content",
+            "name": "article_feed_banner_content",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Read about our patient Leesha's experience and how it helped her with her job as a YouTube Beauty Vlogger! <a href=\"https:\/\/buff.ly\/2kZPCw6\" class=\"feed-banner__link\" title=\"banner\">https:\/\/buff.ly\/2kZPCw6<\/a>",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5b8475d84fcbf",
+            "label": "Instagram Acess Token",
+            "name": "instagram_access_token",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page",
+                "operator": "==",
+                "value": "96"
+            }
+        ]
+    ],
+    "menu_order": 1,
+    "position": "normal",
+    "style": "seamless",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1535407799
 }

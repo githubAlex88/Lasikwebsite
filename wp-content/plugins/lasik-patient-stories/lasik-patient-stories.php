@@ -75,6 +75,7 @@
               'show_in_rest' => true,
               'publicly_queryable' => true,
               'capability_type' => 'post',
+              'rewrite' => array( 'slug' => 'patient-story', 'with_front' => false),
             );
 
             register_post_type( 'story', $args );

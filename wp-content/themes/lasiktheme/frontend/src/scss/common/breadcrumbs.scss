@@ -1,0 +1,23 @@
+.breadcrumbs {
+	margin-bottom: 20px;
+	&__list {
+		margin: 0px;
+		text-align: center;
+	}
+	&__item {
+		line-height: 1;
+		margin-bottom: 0px;
+	}
+	&__link {
+		color: $white;
+		font-size: 10px;
+		font-weight: bold;
+		line-height: 12px;
+	}
+}
+
+@media screen and (min-width: $screen-sm) {
+	.breadcrumbs {
+		margin-bottom: 30px;
+	}
+}

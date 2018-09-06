@@ -5,9 +5,9 @@
   word-break: break-word;
   font-family: $serif;
   background-image: linear-gradient(30deg, rgba(255,96,0, 0.67) 0%, rgba(245,155,15,0.67) 100%), 
-                    url('./assets/images/lca-hashtag.png'), 
-                    url('./assets/images/lca-banner-image.png'),
-                    url('./assets/images/lca-banner-bg.png');
+                    url('assets/images/lca-hashtag.png'), 
+                    url('assets/images/lca-banner-image.png'),
+                    url('assets/images/lca-banner-bg.png');
   background-position: center,left 5% top ,right bottom, center;
   background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
   background-size: cover, 15% , auto 100% ,cover;
@@ -18,7 +18,7 @@
     bottom: 5px;
     width: 35px;
     height: 35px;
-    background: url('./assets/images/lca-banner-tw.png') no-repeat;
+    background: url('assets/images/lca-banner-tw.png') no-repeat;
     background-size: 100% 100%;
   }
 

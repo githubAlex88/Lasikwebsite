@@ -1,0 +1,55 @@
+.communion {
+	&__list {
+		display: flex;
+		margin: 0px auto;
+		border: 1px solid $white;
+		&--small {
+			max-width: 380px;
+			margin-top: -1px;
+		}
+	}
+	&__item {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 33.33%;
+		margin: 0px;
+		border-left: 1px solid $white;
+		&:first-child {
+			border-left: 0px;
+		}
+	}
+	&__link {
+		display: inline-block;
+		width: 100%;
+		padding: 20px 0px 20px;
+		color: $white;
+		text-align: center;
+		&:hover {
+			color: $brand-primary;
+			background-color: $white;
+		}
+	}
+	&__icon {
+		font-size: 36px;
+	}
+	&__text {
+		display: inline-block;
+		width: 100%;
+		font-size: 20px;
+	}
+}
+
+@media screen and (min-width: $screen-x) {
+	.communion {
+		&__link {
+			padding-top: 30px;
+		}
+		&__icon {
+			margin-bottom: 5px;
+		}
+		&__text {
+			font-size: 24px;
+		}
+	}
+}

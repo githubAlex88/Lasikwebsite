@@ -17,26 +17,26 @@
           <?php
           $post = $articles[0];
           setup_postdata( $post );
-          include( locate_template( 'template-parts/articles/article_middle.php', false, false ) );
+          include( locate_template( 'template-parts/articles/article-middle.php', false, false ) );
           wp_reset_postdata();
           ?>
           <div class="row">
-            <?php if ( $articles[1] ) : ?>
+            <?php if ( isset( $articles[1] ) ) : ?>
               <div class="col s12 m6">
                 <?php
                 $post = $articles[1];
                 setup_postdata( $post );
-                include( locate_template( 'template-parts/articles/article_small.php', false, false ) );
+                include( locate_template( 'template-parts/articles/article-small.php', false, false ) );
                 wp_reset_postdata();
                 ?>
               </div>
             <?php endif; ?>
-            <?php if ( $articles[2] ) : ?>
+            <?php if ( isset( $articles[2] ) ) : ?>
               <div class="col s12 m6">
                 <?php
                 $post = $articles[2];
                 setup_postdata( $post );
-                include( locate_template( 'template-parts/articles/article_small.php', false, false ) );
+                include( locate_template( 'template-parts/articles/article-small.php', false, false ) );
                 wp_reset_postdata();
                 ?>
               </div>
@@ -54,32 +54,32 @@
             </h2>
           </div>
         </div>
-        <?php if ( $articles[3] ) : ?>
+        <?php if ( isset( $articles[3] ) ) : ?>
           <div class="col s12">
             <?php
             $post = $articles[3];
             setup_postdata( $post );
-            include( locate_template( 'template-parts/articles/article_large.php', false, false ) );
+            include( locate_template( 'template-parts/articles/article-large.php', false, false ) );
             wp_reset_postdata();
             ?>
           </div>
         <?php endif; ?>
-        <?php if ( $articles[4] ) : ?>
+        <?php if ( isset( $articles[4] ) ) : ?>
           <div class="col s12 m6">
             <?php
             $post = $articles[4];
             setup_postdata( $post );
-            include( locate_template( 'template-parts/articles/article_horizontal.php', false, false ) );
+            include( locate_template( 'template-parts/articles/article-horizontal.php', false, false ) );
             wp_reset_postdata();
             ?>
           </div>
         <?php endif; ?>
-        <?php if ( $articles[5] ) : ?>
+        <?php if ( isset( $articles[5] ) ) : ?>
           <div class="col s12 m6">
             <?php
             $post = $articles[5];
             setup_postdata( $post );
-            include( locate_template( 'template-parts/articles/article_horizontal.php', false, false ) );
+            include( locate_template( 'template-parts/articles/article-horizontal.php', false, false ) );
             wp_reset_postdata();
             ?>
           </div>

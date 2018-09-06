@@ -1,0 +1,149 @@
+.vision-item {
+	margin-bottom: 30px;
+	&:last-child {
+		margin-bottom: 0px;
+	}
+	&__img-wrapper {
+		position: relative;
+	}
+	&__header {
+		position: absolute;
+		top: 10px;
+		left: 0px;
+		max-width: 255px;
+		background-color: $white;
+	}
+	&__name {
+		display: inline-block;
+		width: 100%;
+		padding: 5px 10px;
+		margin: 0px;
+		color: $white;
+		font-size: 17px;
+		font-weight: bold;
+		line-height: 22px;
+		background-color: $brand-primary;
+		&:hover {
+			color: $white;
+			text-decoration: underline;
+		}
+	}
+	&__img {
+		display: block;
+	}
+	&__body {
+		position: relative;
+		margin-top: -20px;
+		background-color: rgba(255, 255, 255, 0.9);
+	}
+	&__content {
+		display: flex;
+		align-items: flex-start;
+		padding: 10px;
+	}
+	&__doctor {
+		flex: none;
+		display: block;
+		max-width: 80px;
+		margin-right: 10px;
+		img {
+			display: block;
+		}
+	}
+	&__title {
+		color: $brand-secondary;
+		font-size: 16px;
+		line-height: 18px;
+		a {
+			color: $brand-secondary;
+		}
+	}
+	&__text {
+		margin-bottom: 5px;
+		font-size: 14px;
+		line-height: 18px;
+		&:last-child {
+			margin-bottom: 0px;
+		}
+	}
+	&__reviews {
+		padding: 0px 10px;
+		.star-bar {
+			height: 14px;
+			span {
+				width: 14px;
+				height: 14px;
+				margin-left: 4px;
+				&:first-child {
+					margin-left: 0px;
+				}
+			}
+			svg {
+				width: 14px;
+				height: 14px;
+			}
+		}
+	}
+}
+
+@media screen and (min-width: $screen-x)  {
+	.vision-item {
+		max-width: 340px;
+		&__body {
+			margin-top: -45px;
+			.btn-simple  {
+				text-align: left;
+				&__icon {
+					font-size: 36px;
+				}
+				&__text {
+					font-size: 18px;
+					line-height: 22px;
+				}
+			}
+		}
+		&__title {
+			margin-bottom: 5px;
+			font-size: 18px;
+			line-height: 18px;
+		}
+		&__text {
+			margin-bottom: 3px;
+		}
+	}
+}
+
+@media screen and (min-width: $screen-sm) {
+	.vision-item {
+		max-width: 300px;
+		margin: 0px 10px 30px;
+		&__name {
+			font-size: 16px;
+		}
+		&__body {
+			margin-top: -20px;
+			.btn-simple {
+				&__icon {
+					font-size: 30px;
+				}
+				&__text {
+					font-size: 14px;
+					line-height: 18px;
+				}
+			}
+		}
+		&__title {
+			font-size: 16px;
+		}
+		&__text {
+			font-size: 14px;
+		}
+	}
+}
+
+@media screen and (min-width: $screen-lg) {
+	.vision-item {
+		max-width: 320px;
+		margin: 0px 15px 30px;
+	}
+}
