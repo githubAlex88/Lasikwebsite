@@ -60,13 +60,24 @@
 		margin-bottom: 25px;
 	}
 	&__link {
-		color: $white;
-		font-size: 25px;
-		&:hover {
-			color: $brand-secondary;
+		a {
+			path {
+				fill: $white;
+			}
+
+			&:hover {
+				path {
+					fill: $brand-secondary;
+				}
+			}
 		}
+
 		&--blue {
-			color: $brand-primary;
+			a {
+				path {
+					fill: $brand-primary;
+				}
+			}
 		}
 	}
 }
